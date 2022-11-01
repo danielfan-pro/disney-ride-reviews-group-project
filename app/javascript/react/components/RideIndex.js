@@ -23,7 +23,7 @@ const RideIndex = (props) => {
   useEffect(() => {
     getRides()
   }, [])
-  let rideTiles = rides.map(ride => {
+  const rideTiles = rides.map(ride => {
     return (
       <RideTile
         key={ride.id}
