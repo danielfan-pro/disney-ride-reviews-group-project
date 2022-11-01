@@ -13,7 +13,6 @@ RSpec.describe Api::V1::RidesController, type: :controller do
     it "should return the name and location of the ride" do
       get :index
 
-      # save_and_open_page
       returned_json = JSON.parse(response.body)
 
       expect(response.status).to eq 200
