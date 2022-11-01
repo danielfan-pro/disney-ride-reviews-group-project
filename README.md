@@ -1,24 +1,21 @@
 # README
+Name and brief description of the project
+Disney Rides Reviews
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A list of authors
+Ziming Chen, Daniel Fan, Marc Yerba, Kayla Smith
 
-Things you may want to cover:
+A link to the deployed site (if applicable)
 
-* Ruby version
+A list of features included in the site
+Index page to show a list of rides
+Show page to show a specific ride and its reviews
+Form to add review for a specific ride
+User registration and authentication
 
-* System dependencies
 
-* Configuration
+Optional:
+Index page to show a list of parks
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+An outline of the technologies in the project
+Ruby, React, CSS, HTML, Rails

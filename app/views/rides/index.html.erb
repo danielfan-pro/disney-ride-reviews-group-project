@@ -1,0 +1,10 @@
+<h1>Disney World Rides Index</h1>
+
+<ul>
+  <% @rides.each do |ride| %>
+    <li>
+      Name: <%= ride.name %>
+    </li>
+      Location: <%= ride.location%>
+  <% end %>
+</ul>
