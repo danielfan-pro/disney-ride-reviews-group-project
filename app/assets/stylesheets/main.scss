@@ -2,10 +2,77 @@
 
 .logo {
   width: 80px;
-  border-radius: 3px;
+  border-radius: 5px;
  }
 
- .ride_image {
-  width: 240px;
-  height: 136px;
+ .right {
+  color: blue;
  }
+
+ .top-bar {
+  padding-bottom: 4rem;
+  background-color: #6c93d3;
+ }
+
+ .button {
+  color: white;
+  background-color: #0B0235;
+  margin: 0rem;
+  padding: 1rem;
+  line-height: .5rem;
+ }
+
+ .DisneyTitle {
+  color: 1A1A1A;
+  font-weight: bolder; 
+ }
+
+.top-bar input {
+  max-width: 200rem;
+  margin-right: 1rem;
+}
+
+.grid-x grid-padding-x small-up-4 {
+  width: 50rem;
+  height: 100rem;
+  
+}
+
+#error_explanation {
+  color:red;
+  font-weight: bold;
+}
+
+.column {
+  float:left;
+  width: 25rem;
+  padding: .2rem;
+  border-style: solid;
+  margin: .5rem;
+  background-color: #40A3CF;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+.namesize {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  text-align: center;
+  padding-top: .5rem;
+}
+
+.namesize1 {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  text-align: center;
+  padding-top: .5rem;
+  font-weight: bold;
+}
+
+.propsimage {
+  height: 250px;
+  width: 450px;
+}
+
+

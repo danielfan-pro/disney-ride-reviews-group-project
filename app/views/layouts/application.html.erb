@@ -17,16 +17,21 @@
 <body>
   
   <nav class="top-bar">
+    <ul class="menu">
+      <li><input type="search" placeholder="Search"></li>
+    </ul>
+   
+    <h1 class="logo"><a href="/rides"><%= image_tag("disney-final.png", alt: "Logo") %></a></h1>
     
-    <h1><a href="/rides"><img src="assets/Logo - final.png" alt='logo' class='logo' /></a> </h1>
+    <h1 class="DisneyTitle">Disney World</h1>
 
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path, :class => "button no-bullet" %></li>
-          <li><%= link_to 'Sign In', new_user_session_path, :class => "button alert no-bullet" %></li>
+          <%= link_to 'Sign Up', new_user_registration_path, :class => "button" %>
+          <%= link_to 'Sign In', new_user_session_path, :class => "button alert" %>
         <%- end -%>
       </ul>
     </section>
