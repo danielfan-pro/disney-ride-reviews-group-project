@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ride_1 = Ride.create(name: "Big Thunder Mountain Railroad" , location: "Frontierland" )
+ride_2 = Ride.create(name: "Jungle Cruise" , location: "Adventureland" )
+ride_3 = Ride.create(name: "Splash Mountain" , location: "Frontierland" )
