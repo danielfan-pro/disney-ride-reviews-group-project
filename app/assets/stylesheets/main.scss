@@ -10,12 +10,12 @@
  }
 
  .top-bar {
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   background-color: #6c93d3;
+  justify-content: center;
  }
 
  .button {
-  color: white;
   background-color: #0B0235;
   margin: 0rem;
   padding: 1rem;
@@ -25,6 +25,7 @@
  .DisneyTitle {
   color: 1A1A1A;
   font-weight: bolder; 
+  text-align: center;
  }
 
 .top-bar input {
@@ -75,4 +76,12 @@
   width: 450px;
 }
 
+.top-bar ul {
+  background-color: #6c93d3;
+}
 
+.top-bar input {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
