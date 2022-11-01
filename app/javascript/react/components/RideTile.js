@@ -5,6 +5,7 @@ const RideTile = props => {
     <div>
       <p>Name: {props.name}</p>
       <p>Location: {props.location}</p>
+      <img src = {props.image_url} className="ride_image"/>
     </div>
   )
 }

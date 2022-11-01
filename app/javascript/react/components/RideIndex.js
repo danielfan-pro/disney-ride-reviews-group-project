@@ -31,6 +31,8 @@ const RideIndex = (props) => {
         key={ride.id}
         name={ride.name}
         location={ride.location}
+        image_url={ride.image_url}
+        description={ride.description}
       />
     )
   })

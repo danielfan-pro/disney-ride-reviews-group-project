@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2022_10_31_184506) do
   create_table "rides", force: :cascade do |t|
     t.string "name", null: false
     t.string "location", null: false
+    t.string "image_url", null: false
+    t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
