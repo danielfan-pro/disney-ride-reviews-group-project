@@ -4,14 +4,7 @@ class Api::V1::RidesController < ApplicationController
   end
 
 
-  def show
-    ride = Ride.find(params[:id])
 
-    # content_type :json
-    # json ride
-
-    render json: ride, status: ok
-  end
 
   
 
