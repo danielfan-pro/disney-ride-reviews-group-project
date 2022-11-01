@@ -36,7 +36,7 @@ const RideIndex = (props) => {
 
   return (
     <div>
-      <h1>Disney World Rides Index</h1>
+      <h1>Ride Reviews</h1>
       {rideTiles}
     </div>
     
