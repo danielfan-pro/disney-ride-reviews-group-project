@@ -2,11 +2,13 @@ import React from 'react';
 
 const RideTile = props => {
   return (
-    <div>
-      <p>Name: {props.name}</p>
-      <p>Location: {props.location}</p>
-      <img src = {props.image_url} className="ride_image"/>
-    </div>
+      <div className='row'>
+        <div className='column'>
+      <img src = {props.image_url} className="propsimage"/>
+        <p className='namesize1'>{props.name}</p>
+        <p className='namesize'>Location: {props.location}</p>
+        </div>
+      </div>  
   )
 }
 

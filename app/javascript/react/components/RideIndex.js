@@ -12,8 +12,7 @@ const RideIndex = (props) => {
         throw new Error(errorMessage)
       }
       const responseBody = await response.json()
-      
-      setRides(responseBody)
+      setRides(responseBody.rides)
       
     } catch (error) {
       console.error(`Error in Fetch: ${error.message}`)
@@ -24,22 +23,20 @@ const RideIndex = (props) => {
   useEffect(() => {
     getRides()
   }, [])
-
-  let rideTiles = rides.map(ride => {
+  const rideTiles = rides.map(ride => {
     return (
       <RideTile
         key={ride.id}
         name={ride.name}
         location={ride.location}
         image_url={ride.image_url}
-        description={ride.description}
       />
     )
   })
 
   return (
     <div>
-      <h1>Disney World Rides Index</h1>
+      <h1>Ride Reviews</h1>
       {rideTiles}
     </div>
     
