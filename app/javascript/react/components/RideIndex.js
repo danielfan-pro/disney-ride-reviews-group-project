@@ -12,8 +12,7 @@ const RideIndex = (props) => {
         throw new Error(errorMessage)
       }
       const responseBody = await response.json()
-      
-      setRides(responseBody)
+      setRides(responseBody.rides)
       
     } catch (error) {
       console.error(`Error in Fetch: ${error.message}`)
@@ -24,7 +23,6 @@ const RideIndex = (props) => {
   useEffect(() => {
     getRides()
   }, [])
-
   let rideTiles = rides.map(ride => {
     return (
       <RideTile

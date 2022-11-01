@@ -19,14 +19,13 @@ RSpec.describe Api::V1::RidesController, type: :controller do
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
 
-      expect(returned_json[0]['name']).to eq(ride_1['name'])
-      expect(returned_json[0]['location']).to eq(ride_1['location'])
-      expect(returned_json[0]['image_url']).to eq(ride_1['image_url'])
-      expect(returned_json[0]['description']).to eq(ride_1['description'])
+      expect(returned_json['rides'][0]['name']).to eq(ride_1['name'])
+      expect(returned_json['rides'][0]['location']).to eq(ride_1['location'])
+      expect(returned_json['rides'][0]['image_url']).to eq(ride_1['image_url'])
+      expect(returned_json['rides'][0]['description']).to eq(ride_1['description'])
 
     end
   end
-
 
 end
 
