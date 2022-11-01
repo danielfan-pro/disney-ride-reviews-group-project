@@ -3,7 +3,11 @@ class Api::V1::RidesController < ApplicationController
     render json: Ride.all
   end
 
-
+  def show
+    ride = Ride.find(params[:id])
+    binding.pry
+    render json: ride
+  end
 
 
   

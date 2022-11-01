@@ -5,7 +5,7 @@ const RideShowContainer = (props) => {
   const [ride, setRide] = useState({})
 
   const rideId = props.match.params.rideId
-
+  debugger
   const fetchRide = async () => {
     try {
       const response = await fetch(`/api/v1/rides/${rideId}`)
