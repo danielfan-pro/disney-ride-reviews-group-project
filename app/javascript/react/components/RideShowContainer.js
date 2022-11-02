@@ -19,7 +19,7 @@ const RideShowContainer = (props) => {
       const responseBody = await response.json()
       
       setRide(responseBody.ride)
-      setReviews(responseBody.reviews)
+      setReviews(responseBody.ride['reviews'])
       
     } catch (err) {
       console.error(`Error in Fetch: ${error.message}`)

@@ -64,37 +64,6 @@ image_url: "https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/up
 description: "Deep inside an age-old mountain, clamber into a rustic mine train and make your way up a steep incline." 
 )
 
-### User ###
-user_1 = User.find_or_create_by(
-  email: "user1@gmail.com",
-  password: "user1password"
-)
-
-user_2 = User.find_or_create_by(
-  email: "user2@gmail.com",
-  password: "user2password"
-)
-
-user_3 = User.find_or_create_by(
-  email: "user3@gmail.com",
-  password: "user3password"
-)
-
-user_4 = User.find_or_create_by(
-  email: "user4@gmail.com",
-  password: "user4password"
-)
-
-user_5 = User.find_or_create_by(
-  email: "user5@gmail.com",
-  password: "user5password"
-)
-
-user_6 = User.find_or_create_by(
-  email: "user6@gmail.com",
-  password: "user6password"
-)
-
 ### Review ###
 review_1 = Review.find_or_create_by(
   title: 'Fun kids’ ride',
@@ -119,6 +88,45 @@ review_3 = Review.find_or_create_by(
   user_id: 2,
   ride_id: 2 
 )
+
+### User ###
+# user_1 = User.find_or_create_by(
+#   email: "user1@gmail.com",
+#   username: "user1",
+#   password: "user1password"
+# )
+
+# user_2 = User.find_or_create_by(
+#   email: "user2@gmail.com",
+#   username: "user2",
+#   password: "user2password"
+# )
+
+# user_3 = User.find_or_create_by(
+#   email: "user3@gmail.com",
+#   username: "user3",
+#   password: "user3password"
+# )
+
+# user_4 = User.find_or_create_by(
+#   email: "user4@gmail.com",
+#   username: "user4",
+#   password: "user4password"
+# )
+
+# user_5 = User.find_or_create_by(
+#   email: "user5@gmail.com",
+#   username: "user5",
+#   password: "user5password"
+# )
+
+# user_6 = User.find_or_create_by(
+#   email: "user6@gmail.com",
+#   username: "user6",
+#   password: "user6password"
+# )
+
+
 
 
 

@@ -9,6 +9,7 @@ export const App = (props) => {
     <div> 
       <BrowserRouter>
         <Switch>
+          <Route exact path="/" component={RideIndex} />
           <Route exact path="/rides" component={RideIndex} />
           <Route exact path="/rides/:id" component={RideShowContainer} />
         </Switch>

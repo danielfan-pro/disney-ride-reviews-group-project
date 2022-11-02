@@ -1,8 +1,9 @@
 import React from "react"
 
 const UserTile = (props) => {
+  
   return (
-    <p>User: {props.user_id}</p>
+    <p>User: {props.user_email}</p>
   )
 }
 

@@ -5,10 +5,8 @@ class Api::V1::RidesController < ApplicationController
 
   def show
     
-    ride = Ride.find(params[:id])
-    reviews = ride.reviews
+    render json: Ride.find(params[:id]), serializer: RideShowSerializer, include: ['reviews.user']
 
-    render json: { ride: ride, reviews: reviews }
   end
 
 

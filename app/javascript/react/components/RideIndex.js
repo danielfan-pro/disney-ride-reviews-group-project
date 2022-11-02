@@ -19,7 +19,6 @@ const RideIndex = (props) => {
     }
   }
 
-
   useEffect(() => {
     getRides()
   }, [])
