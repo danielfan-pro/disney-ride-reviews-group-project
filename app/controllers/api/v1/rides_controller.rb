@@ -1,4 +1,6 @@
 class Api::V1::RidesController < ApplicationController
+  protect_from_forgery unless: -> { request.format.json? }
+
   def index
     render json: Ride.all
   end
@@ -7,5 +9,7 @@ class Api::V1::RidesController < ApplicationController
     
     render json: Ride.find(params[:id]), serializer: RideShowSerializer, include: ['reviews.user']
 
+  def search
+    render json: Ride.where("name ILIKE ?", "%#{params['search_string']}%")
   end
 end
