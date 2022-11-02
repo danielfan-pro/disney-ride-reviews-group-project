@@ -13,24 +13,24 @@ const SearchBar = (props) => {
     const body = JSON.stringify({
       search_string: searchString,
     });
-    debugger
+
     try {
-      const response = await fetch("/api/v1/rides/search.json", {
+      const response = await fetch("/api/v1/rides/search", {
         method: "POST",
+        credentials: "same-origin",
         body: body,
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
       });
-      debugger
+
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`;
         throw new Error(errorMessage);
       }
       const responseBody = await response.json();
-      debugger
-      props.setRides([...props.rides, responseBody]);
+      props.setRides(responseBody.rides);
     } catch (error) {
       console.error(`Error in Fetch: ${error.message}`);
     }
