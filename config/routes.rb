@@ -9,5 +9,5 @@ Rails.application.routes.draw do
       resources :rides, only: [:index]
     end
   end
-
+  resources :rides, only: [:new, :create]
 end
