@@ -38,8 +38,8 @@ const RideIndex = (props) => {
     <div>
       <h1>Ride Reviews</h1>
       <SearchBar 
-      rides={rides}
-      setRides={setRides}
+        rides={rides}
+        setRides={setRides}
       />
       {rideTiles}
     </div>

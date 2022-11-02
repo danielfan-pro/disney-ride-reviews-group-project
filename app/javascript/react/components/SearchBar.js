@@ -1,11 +1,10 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 
 const SearchBar = (props) => {
   const [searchString, setSearchString] = useState("");
 
   const handleChange = (event) => {
-    const newSearchString = event.target.value;
-    setSearchString(newSearchString);
+    setSearchString(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -36,7 +35,6 @@ const SearchBar = (props) => {
     }
   };
   return (
-    <Fragment>
       <form onSubmit={handleSubmit}>
         <label>Search</label>
         <input
@@ -48,7 +46,6 @@ const SearchBar = (props) => {
 
         <input type="submit" value="Submit" />
       </form>
-    </Fragment>
   );
 };
 

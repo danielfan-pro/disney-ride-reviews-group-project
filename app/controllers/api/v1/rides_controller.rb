@@ -5,7 +5,6 @@ class Api::V1::RidesController < ApplicationController
     render json: Ride.all
   end
   def search
-    rides = Ride.where("name ILIKE ?", "%#{params['search_string']}%")
-    render json: rides
+    render json: Ride.where("name ILIKE ?", "%#{params['search_string']}%")
   end
 end
