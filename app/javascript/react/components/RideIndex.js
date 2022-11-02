@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RideTile from './RideTile'
+import SearchBar from './SearchBar.js';
 
 const RideIndex = (props) => {
   const [rides, setRides] = useState([])
@@ -19,7 +20,6 @@ const RideIndex = (props) => {
     }
   }
 
-
   useEffect(() => {
     getRides()
   }, [])
@@ -37,9 +37,13 @@ const RideIndex = (props) => {
   return (
     <div>
       <h1>Ride Reviews</h1>
+      <SearchBar 
+        rides={rides}
+        setRides={setRides}
+      />
       {rideTiles}
     </div>
-    
+
   ) 
 
 }
