@@ -26,7 +26,7 @@
 #   name: "Splash Mountain" , 
 #   location: "Frontierland", 
 #   image_url: "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/splash-mountain/splash-mountain-00.jpg",
-#   description: "Gently drift through a colorful Southern bayou along with happy-go-lucky Br\’er Rabbit as he looks for his “laughing place.” But be warned: Br\’er Bear and Br\’er Fox are in hot pursuit of this wayward hare." 
+#   description: "Gently drift through a colorful Southern bayou along with happy-go-lucky Br’er Rabbit as he looks for his “laughing place.” But be warned: Br’er Bear and B’er Fox are in hot pursuit of this wayward hare." 
 #   )
 
 # ride_4 = Ride.create(
@@ -99,7 +99,7 @@
 ### Review ###
 review_1 = Review.create(
   title: 'Fun kids\' ride',
-  body: 'Emerge from the ocean\’s depths in time to celebrate Ariel\’s happily ever after in a spectacular fairytale finale.',
+  body: 'Emerge from the ocean’s depths in time to celebrate Ariel’s happily ever after in a spectacular fairytale finale.',
   rating: 5,
   user_id: 1,
   ride_id: 1 
@@ -114,7 +114,7 @@ review_2 = Review.create(
 )
 
 review_3 = Review.create(
-  title: 'It\’s a 10-minute, 10,000-mile journey that you won\'t soon forget!',
+  title: 'It’s a 10-minute, 10,000-mile journey that you won’t soon forget!',
   body: 'Steam past lush foliage, butterflies and waterfalls on the Amazon in South America. Glimpse an abandoned camp overrun by curious gorillas on the shores of the African Congo.',
   rating: 4,
   user_id: 2,

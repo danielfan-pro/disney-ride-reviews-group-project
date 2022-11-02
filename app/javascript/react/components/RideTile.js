@@ -4,7 +4,7 @@ const RideTile = props => {
   return (
       <div className='row'>
         <div className='column'>
-      <img src = {props.image_url} className="propsimage"/>
+        <a href={'/rides/' + props.id}><img src = {props.image_url} className="propsimage"/></a>
         <p className='namesize1'>{props.name}</p>
         <p className='namesize'>Location: {props.location}</p>
         </div>

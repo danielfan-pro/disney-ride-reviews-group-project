@@ -4,9 +4,11 @@ class Api::V1::RidesController < ApplicationController
   end
 
   def show
+    
     ride = Ride.find(params[:id])
-    binding.pry
-    render json: ride
+    reviews = ride.reviews
+
+    render json: { ride: ride, reviews: reviews }
   end
 
 

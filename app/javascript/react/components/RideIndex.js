@@ -27,6 +27,7 @@ const RideIndex = (props) => {
     return (
       <RideTile
         key={ride.id}
+        id={ride.id}
         name={ride.name}
         location={ride.location}
         image_url={ride.image_url}

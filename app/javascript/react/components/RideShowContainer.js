@@ -1,13 +1,15 @@
-import RideShow from './RideShow'
 import React, { useState, useEffect } from "react"
+import RideShow from './RideShow'
 
 const RideShowContainer = (props) => {
   const [ride, setRide] = useState({})
-
-  const rideId = props.match.params.rideId
-  debugger
+  const [reviews, setReviews] = useState([])
+  
+  const rideId = props.match.params.id
+  
   const fetchRide = async () => {
     try {
+      
       const response = await fetch(`/api/v1/rides/${rideId}`)
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`
@@ -15,12 +17,12 @@ const RideShowContainer = (props) => {
         throw (error)
       }
       const responseBody = await response.json()
-      debugger
-      setRide(responseBody)
-
+      
+      setRide(responseBody.ride)
+      setReviews(responseBody.reviews)
+      
     } catch (err) {
-      console.error("Error in fetch!")
-      console.error(err)
+      console.error(`Error in Fetch: ${error.message}`)
     }
   }
 
@@ -28,6 +30,7 @@ const RideShowContainer = (props) => {
     fetchRide()
   }, [])
 
+  
   return (
     <RideShow
       id={ride.id}
@@ -35,9 +38,8 @@ const RideShowContainer = (props) => {
       location={ride.location}
       image_url={ride.image_url}
       description={ride.description}
-    />
-
-    
+      reviews={reviews}
+    />    
   )
 }
 
