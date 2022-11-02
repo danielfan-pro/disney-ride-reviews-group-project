@@ -36,7 +36,7 @@ const RideIndex = (props) => {
 
   return (
     <div>
-      <h1 className="center-ride-reviews">Ride Reviews</h1>
+      <h1 className="center-ride-reviews">Magic Kingdom Rides</h1>
       <div className='grid-x grid-margin-x'>
       {rideTiles}
       </div>
