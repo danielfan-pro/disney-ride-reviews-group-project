@@ -1,7 +1,6 @@
 import React from "react"
 import ReviewTile from "./ReviewTile"
 
-
 const RideShow = (props) => {
   
   const reviewTiles = props.reviews.map((review) => {
@@ -12,10 +11,9 @@ const RideShow = (props) => {
         body={review.body}
         rating={review.rating}
         created_at={review.created_at}
-        user_email={review['user']['email']}
+        username={review.user.username}
       />
     )
-
   })
   
   return (

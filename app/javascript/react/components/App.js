@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 export const App = (props) => {
   return (
-    <div> 
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={RideIndex} />
@@ -14,7 +13,6 @@ export const App = (props) => {
           <Route exact path="/rides/:id" component={RideShowContainer} />
         </Switch>
      </BrowserRouter>
-    </div>
   )
 }
 

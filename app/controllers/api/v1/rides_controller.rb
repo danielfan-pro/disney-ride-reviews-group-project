@@ -8,8 +8,4 @@ class Api::V1::RidesController < ApplicationController
     render json: Ride.find(params[:id]), serializer: RideShowSerializer, include: ['reviews.user']
 
   end
-
-
-  
-
 end
