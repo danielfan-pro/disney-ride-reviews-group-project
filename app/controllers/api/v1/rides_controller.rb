@@ -1,5 +1,4 @@
-class Api::V1::RidesController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
+class Api::V1::RidesController < ApiController
 
   def index
     render json: Ride.all

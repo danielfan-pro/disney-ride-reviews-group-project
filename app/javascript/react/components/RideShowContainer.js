@@ -9,7 +9,6 @@ const RideShowContainer = (props) => {
   
   const fetchRide = async () => {
     try {
-      
       const response = await fetch(`/api/v1/rides/${rideId}`)
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`
@@ -19,8 +18,7 @@ const RideShowContainer = (props) => {
       const responseBody = await response.json()
       
       setRide(responseBody.ride)
-      setReviews(responseBody.ride['reviews'])
-      
+      setReviews(responseBody.ride.reviews)   
     } catch (err) {
       console.error(`Error in Fetch: ${error.message}`)
     }
