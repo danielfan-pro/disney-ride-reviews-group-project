@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+### Rides ###
 ride_1 = Ride.find_or_create_by(
   name: "Under the Sea ~ Journey of The Little Mermaid", 
   location: "Fantasyland", 
@@ -24,7 +25,7 @@ ride_3 = Ride.find_or_create_by(
   name: "Splash Mountain" , 
   location: "Frontierland", 
   image_url: "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/splash-mountain/splash-mountain-00.jpg",
-  description: "Gently drift through a colorful Southern bayou along with happy-go-lucky Br\’er Rabbit as he looks for his “laughing place.” But be warned: Br\’er Bear and Br\’er Fox are in hot pursuit of this wayward hare." 
+  description: "Gently drift through a colorful Southern bayou along with happy-go-lucky Br’er Rabbit as he looks for his “laughing place.” But be warned: Br’er Bear and Br’er Fox are in hot pursuit of this wayward hare." 
   )
 
 ride_4 = Ride.find_or_create_by(
@@ -52,7 +53,7 @@ ride_7 = Ride.find_or_create_by(
 name: "Pirates of the Caribbean" , 
 location: "Adventureland", 
 image_url: "https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2015/09/pirates-caribbean-halloween-party.jpg",
-description: "Board a weathered barge for a treacherous voyage to the 17th century, when rowdy rogues and ruthless rapscallions ransacked Caribbean seaport towns. Sing along as pirates serenade you with their anthem, “Yo Ho, Yo Ho (A Pirate\’s Life for Me).”" 
+description: "Board a weathered barge for a treacherous voyage to the 17th century, when rowdy rogues and ruthless rapscallions ransacked Caribbean seaport towns. Sing along as pirates serenade you with their anthem, “Yo Ho, Yo Ho (A Pirate’s Life for Me).”" 
 )
 
 
@@ -62,6 +63,73 @@ location: "Fantasyland",
 image_url: "https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2014/06/MINERT999000.jpg",
 description: "Deep inside an age-old mountain, clamber into a rustic mine train and make your way up a steep incline." 
 )
+
+# ### User ###
+user_1 = User.create(
+  email: "user1@gmail.com",
+  password: "user1password",
+  username: "user1"
+)
+
+user_2 = User.create(
+  email: "user2@gmail.com",
+  password: "user2password",
+  username: "user2"
+)
+
+user_3 = User.create(
+  email: "user3@gmail.com",
+  password: "user3password",
+  username: "user3"
+)
+
+user_4 = User.create(
+  email: "user4@gmail.com",
+  password: "user4password",
+  username: "user4"
+)
+
+user_5 = User.create(
+  email: "user5@gmail.com",
+  password: "user5password",
+  username: "user5"
+)
+
+user_6 = User.create(
+  email: "user6@gmail.com",
+  password: "user6password",
+  username: "user6"
+)
+
+# ### Review ###
+review_1 = Review.find_or_create_by(
+  title: 'Fun kids’ ride',
+  body: 'Emerge from the ocean’s depths in time to celebrate Ariel’s happily ever after in a spectacular fairytale finale.',
+  rating: 5,
+  user: user_1,
+  ride: ride_1 
+)
+
+review_2 = Review.find_or_create_by(
+  title: 'Better than the movie',
+  body: 'Watch for angry hippos, hungry lions and “sleeping” zebras along the Nile and be on the lookout for a missing Jungle Cruise vessel and its helpless passengers. As the cruise continues down the Mekong River, you just might learn that the jungle always gets the last laugh.',
+  rating: 4,
+  user: user_1,
+  ride_id: ride_2
+)
+
+review_3 = Review.find_or_create_by(
+  title: 'It’s a 10-minute, 10,000-mile journey that you won’t soon forget!',
+  body: 'Steam past lush foliage, butterflies and waterfalls on the Amazon in South America. Glimpse an abandoned camp overrun by curious gorillas on the shores of the African Congo.',
+  rating: 4,
+  user: user_2,
+  ride: ride_2 
+)
+
+
+
+
+
 
 
 
