@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import RideTile from './RideTile'
 import SearchBar from './SearchBar.js';
 
@@ -36,8 +36,8 @@ const RideIndex = (props) => {
   })
 
   return (
-    <div>
-      <h1>Ride Reviews</h1>
+    <Fragment>
+      <h1>Magic Kingdom Rides</h1>
       <SearchBar 
         rides={rides}
         setRides={setRides}
@@ -45,7 +45,7 @@ const RideIndex = (props) => {
       <div className='grid-x grid-margin-x'>
        {rideTiles}
       </div>
-    </div>
+    </Fragment>
 
   ) 
 
