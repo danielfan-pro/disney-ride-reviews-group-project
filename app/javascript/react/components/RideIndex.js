@@ -42,7 +42,6 @@ const RideIndex = (props) => {
         setRides={setRides}
       />
       {rideTiles}
-      </div>
     </div>
 
   ) 
