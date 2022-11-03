@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :rides, only: [:index]
+      post 'rides/search', to: 'rides#search'
     end
   end
-
+  resources :rides, only: [:new, :create]
 end
