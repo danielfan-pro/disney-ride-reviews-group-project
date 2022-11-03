@@ -42,7 +42,9 @@ const RideIndex = (props) => {
         rides={rides}
         setRides={setRides}
       />
-      {rideTiles}
+      <div className='grid-x grid-margin-x'>
+       {rideTiles}
+      </div>
     </div>
 
   ) 
