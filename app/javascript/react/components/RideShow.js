@@ -16,11 +16,13 @@ const RideShow = (props) => {
   });
 
   return (
-    <div className="rideshow">
-      <h1>{props.name}</h1>
-      <h2>{props.location}</h2>
-      <img src={props.image_url} alt={props.name} className="imagetile" />
-      {reviewTiles}
+    <div className="ride-show">
+      <div className="image-box">
+        <h1>{props.name}</h1>
+        <h2>{props.location}</h2>
+        <img src={props.image_url} alt={props.name} className="image-tile" />
+      </div>
+        {reviewTiles}
     </div>
   );
 };

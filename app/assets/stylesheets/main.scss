@@ -1,12 +1,8 @@
-// @import "colors";
+@import "colors";
 
 .logo {
-  width: 80px;
-  border-radius: 5px;
- }
-
- .logo.alert {
-  color: white;
+  width: 5rem;
+  border-radius: 0.313rem;
  }
 
 .top-bar {
@@ -16,12 +12,7 @@
 
  .button {
   margin: .5rem;
-  color: #ffffff;
- }
-
- .DisneyTitle {
-  color: #000000;
-  font-weight: bolder; 
+  color: $button;
  }
 
 .top-bar input {
@@ -30,8 +21,8 @@
 }
 
 .button.hollow.alert {
-  border: 0px;
-  color: #ffffff;
+  border: none;
+  color: $button;
   padding-top: 2rem;
 }
 
@@ -40,24 +31,24 @@ ul.menu {
 }
 
 #error_explanation {
-  color:#880808;
+  color: $error;
   font-weight: bold;
 }
 
-.column {
+.image-box {
   border-style: solid;
-  background-color: #427f9c;
-  color: #ffffff;
+  background-color: $image-box;
+  color: $button;
 }
 
-.namesize {
+.ride-location {
   margin-top: .5rem;
   margin-bottom: .5rem;
   text-align: center;
   font-style: oblique;
 }
 
-.namesize1 {
+.ride-name {
   margin-top: .5rem;
   margin-bottom: .5rem;
   text-align: center;
@@ -66,24 +57,15 @@ ul.menu {
   font-size: larger;
 }
 
-.imagetile {
+.image-tile {
   height: 15rem;
   width: 30rem;
-
-  transform: scale(1);
-  transition: 0.3s ease-in-out;
 }
 
 .top-bar input {
   display:flex;
   flex-direction: row;
   justify-content: space-around;
-
-}
-
-.center-ride-reviews {
-  text-align: center;
-
 }
 
 .grid-margin-x {
@@ -92,7 +74,3 @@ ul.menu {
   margin-top: 5rem;
   row-gap: 2rem;
 }
-
-
-
-

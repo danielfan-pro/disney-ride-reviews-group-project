@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 const RideTile = props => {
   return (
-      <div className='column cell medium-6 small-12 large-3'>
+      <div className='cell medium-6 small-12 large-3'>
         <Link to={`/rides/${props.id}`}>
-          <div className='column'>
-            <img src ={props.image_url} className="imagetile"/>
-            <p className='namesize1'>{props.name}</p>
-            <p className='namesize'>Location: {props.location}</p>
+          <div className='image-box'>
+            <img src ={props.image_url} className="image-tile"/>
+            <p className='ride-name'>{props.name}</p>
+            <p className='ride-location'>Location: {props.location}</p>
           </div>
         </Link>
       </div>  
