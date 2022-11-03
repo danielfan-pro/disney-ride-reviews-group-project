@@ -1,31 +1,18 @@
-// @import "colors";
+@import "colors";
 
 .logo {
-  width: 80px;
-  border-radius: 5px;
+  width: 5rem;
+  border-radius: 0.313rem;
  }
 
- .right {
-  color: blue;
- }
-
- .top-bar {
-  padding-bottom: 2rem;
-  background-color: #6c93d3;
-  justify-content: center;
+.top-bar {
+  padding: 1rem;
+  background-image: url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/textures/nav-textures/nav_texture_1366.png),url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/svg/nav_footer_background.svg),linear-gradient(95deg, #5c5c8a 3%, #9a6e8d 35%, #bc865c 65%, #7f847b 85%, #5c5c8a 96%);
  }
 
  .button {
-  background-color: #0B0235;
-  margin: 0rem;
-  padding: 1rem;
-  line-height: .5rem;
- }
-
- .DisneyTitle {
-  color: 1A1A1A;
-  font-weight: bolder; 
-  text-align: center;
+  margin: .5rem;
+  color: $button;
  }
 
 .top-bar input {
@@ -33,55 +20,57 @@
   margin-right: 1rem;
 }
 
-.grid-x grid-padding-x small-up-4 {
-  width: 50rem;
-  height: 100rem;
-  
+.button.hollow.alert {
+  border: none;
+  color: $button;
+  padding-top: 2rem;
+}
+
+ul.menu {
+  background-color: transparent;
 }
 
 #error_explanation {
-  color:red;
+  color: $error;
   font-weight: bold;
 }
 
-.column {
-  float:left;
-  width: 25rem;
-  padding: .2rem;
+.image-box {
   border-style: solid;
-  margin: .5rem;
-  background-color: #40A3CF;
-  color: white;
-
-
+  background-color: $image-box;
+  color: $button;
 }
 
-.namesize {
+.ride-location {
   margin-top: .5rem;
   margin-bottom: .5rem;
   text-align: center;
-  padding-top: .5rem;
+  font-style: oblique;
 }
 
-.namesize1 {
+.ride-name {
   margin-top: .5rem;
   margin-bottom: .5rem;
   text-align: center;
   padding-top: .5rem;
   font-weight: bold;
+  font-size: larger;
 }
 
-.imagetile {
-  height: 250px;
-  width: 450px;
-}
-
-.top-bar ul {
-  background-color: #6c93d3;
+.image-tile {
+  height: 15rem;
+  width: 30rem;
 }
 
 .top-bar input {
   display:flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.grid-margin-x {
+  margin-left: 8rem;
+  margin-right: 8rem;
+  margin-top: 5rem;
+  row-gap: 2rem;
 }
