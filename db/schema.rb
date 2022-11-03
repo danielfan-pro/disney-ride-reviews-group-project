@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_31_184506) do
+ActiveRecord::Schema.define(version: 2022_11_02_203913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "body", null: false
+    t.string "rating", null: false
+    t.bigint "user_id", null: false
+    t.bigint "ride_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ride_id"], name: "index_reviews_on_ride_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "rides", force: :cascade do |t|
     t.string "name", null: false
@@ -32,6 +44,7 @@ ActiveRecord::Schema.define(version: 2022_10_31_184506) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
