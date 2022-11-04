@@ -1,7 +1,10 @@
 class Api::V1::RidesController < ApiController
-
+  
   def index
     render json: Ride.all
+  end
+
+  def create 
   end
 
   def show   

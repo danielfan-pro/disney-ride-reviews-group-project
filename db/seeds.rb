@@ -65,6 +65,13 @@ description: "Deep inside an age-old mountain, clamber into a rustic mine train 
 )
 
 # ### User ###
+user_admin = User.create(
+  email: "admin@gmail.com",
+  password: "adminpassword",
+  username: "admin",
+  role: "admin"
+)
+
 user_1 = User.create(
   email: "user1@gmail.com",
   password: "user1password",
