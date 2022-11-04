@@ -1,5 +1,7 @@
 @import "colors";
 
+
+
 .logo {
   width: 5rem;
   border-radius: 0.313rem;
@@ -42,6 +44,10 @@ ul.menu {
   color: $button;
 }
 
+.park-ride {
+  padding-left: 1rem;
+}
+
 .ride-location {
   margin-top: .5rem;
   margin-bottom: .5rem;
@@ -58,8 +64,8 @@ ul.menu {
 }
 
 .image-tile {
-  height: 15rem;
-  width: 30rem;
+  height: auto;
+  width: auto;
 }
 
 .top-bar input {
@@ -78,6 +84,8 @@ ul.menu {
 .input-group-rounded {
   width: 25rem;
   margin-top: 0.5rem;
+  margin-left: auto;
+  padding-right: 1rem;
   .input-group-field {
     border-radius: 5000px 0 0 5000px;
     padding-left: 1rem;
