@@ -36,16 +36,18 @@ const RideIndex = (props) => {
   })
 
   return (
-    <Fragment>
-      <h1>Magic Kingdom Rides</h1>
-      <SearchBar 
-        rides={rides}
-        setRides={setRides}
-      />
-      <div className='grid-x grid-margin-x'>
-       {rideTiles}
+    <div>
+      <div className="grid-x">
+        <h3 className= "small-12 medium-6 large-8 park-ride">Magic Kingdom Rides</h3>
+        <SearchBar 
+          rides={rides}
+          setRides={setRides}
+        />
       </div>
-    </Fragment>
+        <div className='grid-x grid-margin-x'>
+        {rideTiles}
+        </div>
+    </div>
 
   ) 
 

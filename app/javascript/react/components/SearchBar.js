@@ -35,26 +35,25 @@ const SearchBar = (props) => {
     }
   };
   return (
-    <div className="grid-x">
-    <div className= "medium-6 large-8"></div>
+ 
     <div className="small-12 medium-6 large-4">
-    <form onSubmit={handleSubmit}>
-      <div className="input-group input-group-rounded">
-        <input
-          className="input-group-field"
-          type="search"
-          name="searchString"
-          value={searchString}
-          onChange={handleChange}
-          placeholder="Search rides"
-        />
-        <div className="input-group-button">
-          <input type="submit" className="button secondary" value="Search" />
+      <form onSubmit={handleSubmit}>
+        <div className="input-group input-group-rounded">
+          <input
+            className="input-group-field"
+            type="search"
+            name="searchString"
+            value={searchString}
+            onChange={handleChange}
+            placeholder="Search rides"
+          />
+          <div className="input-group-button">
+            <input type="submit" className="button secondary" value="Search" />
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
     </div>
-   </div>
+
   );
 };
 

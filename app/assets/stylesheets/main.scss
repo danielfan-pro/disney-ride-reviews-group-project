@@ -9,6 +9,9 @@
   background-image: url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/textures/nav-textures/nav_texture_1366.png),url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/svg/nav_footer_background.svg),linear-gradient(95deg, #5c5c8a 3%, #9a6e8d 35%, #bc865c 65%, #7f847b 85%, #5c5c8a 96%);
  }
 
+ nav.top-bar {
+  padding: 0;
+ }
  .button {
   margin: .5rem;
   color: $button;
@@ -22,7 +25,6 @@
 .button.hollow.alert {
   border: none;
   color: $button;
-  padding-top: 2rem;
 }
 
 ul.menu {
@@ -67,14 +69,15 @@ ul.menu {
 }
 
 .grid-margin-x {
-  margin-left: 8rem;
-  margin-right: 8rem;
-  margin-top: 5rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
   row-gap: 2rem;
 }
 
+
 .input-group-rounded {
   width: 25rem;
+  margin-top: 0.5rem;
   .input-group-field {
     border-radius: 5000px 0 0 5000px;
     padding-left: 1rem;
