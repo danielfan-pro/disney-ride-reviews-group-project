@@ -13,11 +13,20 @@
     <a href="/rides" class="logo"><%= image_tag("disney-final.png", alt: "Logo") %></a> 
     <div>
         <%- if current_user -%>
-          <div class="top-bar-right">
-            <ul class="menu">
-              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button alert hollow"  %></li>
-            </ul>
-          </div>
+          <%- if current_user.role == "admin" -%>
+            <div class=“top-bar-right”>
+              <ul class=“menu”>
+                <li><%= link_to 'Add Ride', '/rides/new', :class => "button alert hollow" %></li>
+                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button alert hollow" %></li>
+              </ul>
+            </div>
+          <%- else -%>
+            <div class="top-bar-right">
+              <ul class="menu">
+                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button alert hollow"  %></li>
+              </ul>
+            </div>
+          <%- end -%>
         <%- else -%>
           <div class="top-bar-right">
             <ul class="menu">

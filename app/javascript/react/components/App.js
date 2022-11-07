@@ -14,7 +14,7 @@ export const App = (props) => {
           <Route exact path="/rides/new" component={NewRide} />
           <Route exact path="/rides/:id" component={RideShowContainer} />
         </Switch>
-     </BrowserRouter>
+    </BrowserRouter>
   )
 }
 

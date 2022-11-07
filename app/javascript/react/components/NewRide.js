@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom'
 
 const NewRide = (props) => {
-  const [shouldRedirect, setShouldRedirect] = useState(false)
+  const [redirect, setRedirect] = useState(null)
   const [newRide, setNewRide] = useState({
     name: "",
     location: "",
@@ -34,7 +34,8 @@ const NewRide = (props) => {
         method: "POST",
         credentials: "same-origin",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Accept": "application/json" 
         },
         body: JSON.stringify({ ride: newRide })
       })
@@ -44,15 +45,19 @@ const NewRide = (props) => {
         throw(error)
       }
       console.log("Ride was added successfully!")
-      setShouldRedirect(true) 
+      const rideBody = await response.json()
+      debugger
+      if (rideBody.ride.id) {
+        setRedirect(rideBody.ride.id)
+      } 
     } catch(err) {
       console.error(`Error in fetch: ${err.message}`)
     }
     
   }
 
-  if (shouldRedirect) {
-    return <Redirect to='/rides' />
+  if (redirect !== null) {
+    return <Redirect to={`/rides/${redirect}`} />
   }
 
   return (
