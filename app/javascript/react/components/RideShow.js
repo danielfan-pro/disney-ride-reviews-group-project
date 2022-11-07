@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ReviewTile from "./ReviewTile";
+import ReviewForm from "./ReviewForm";
 
 const RideShow = (props) => {
   const reviewTiles = props.reviews.map((review) => {
@@ -14,7 +15,7 @@ const RideShow = (props) => {
       />
     );
   });
-
+  
   return (
     <div className="ride-show">
       <div className="image-box">
@@ -23,6 +24,10 @@ const RideShow = (props) => {
         <img src={props.image_url} alt={props.name} className="image-tile" />
       </div>
         {reviewTiles}
+
+        <ReviewForm 
+          addNewReview={props.addNewReview}
+        />
     </div>
   );
 };
