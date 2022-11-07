@@ -1,11 +1,12 @@
 import React from "react";
 import ReviewTile from "./ReviewTile";
+import ReviewForm from "./ReviewForm";
 
 const RideShow = (props) => {
   const reviewTiles = props.reviews.map((review) => {
     return (
       <ReviewTile
-        key={review.id}
+        key={review.id} 
         title={review.title}
         body={review.body}
         rating={review.rating}
@@ -23,6 +24,12 @@ const RideShow = (props) => {
         <img src={props.image_url} alt={props.name} className="image-tile" />
       </div>
         {reviewTiles}
+
+        <ReviewForm 
+          reviews={props.reviews}
+          setReviews={props.setReviews}
+          addNewReview={props.addNewReview}
+        />
     </div>
   );
 };

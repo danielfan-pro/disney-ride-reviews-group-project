@@ -33,3 +33,6 @@ feature 'Admin adds new ride' do
 
   end
 end
+
+
+
