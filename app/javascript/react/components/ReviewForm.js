@@ -40,7 +40,7 @@ const ReviewForm = (props) => {
   }
 
   return (
-    <div className="review-form">
+    <div className="form-div">
       <form onSubmit={handleSubmitAddNewReview}>
         <ErrorList errors={errors} />
         <label htmlFor="title">Review Headline
@@ -48,7 +48,7 @@ const ReviewForm = (props) => {
         </label>
 
         <label htmlFor="body">Review Body
-          <input id="body" type="text" name="body" value={newReview.body} onChange={handleFormChange}/>
+          <textarea id="body" rows="4" type="text" name="body" value={newReview.body} onChange={handleFormChange}/>
         </label>
 
         <label htmlFor="rating">Review Rating

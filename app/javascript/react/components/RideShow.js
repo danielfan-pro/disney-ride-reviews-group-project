@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReviewTile from "./ReviewTile";
 import ReviewForm from "./ReviewForm";
 
@@ -15,7 +15,7 @@ const RideShow = (props) => {
       />
     );
   });
-
+  
   return (
     <div className="ride-show">
       <div className="image-box">
@@ -26,8 +26,6 @@ const RideShow = (props) => {
         {reviewTiles}
 
         <ReviewForm 
-          reviews={props.reviews}
-          setReviews={props.setReviews}
           addNewReview={props.addNewReview}
         />
     </div>
