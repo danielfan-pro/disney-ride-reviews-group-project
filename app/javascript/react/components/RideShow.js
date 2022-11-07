@@ -6,7 +6,7 @@ const RideShow = (props) => {
   const reviewTiles = props.reviews.map((review) => {
     return (
       <ReviewTile
-        key={review.id} 
+        key={review.id}
         title={review.title}
         body={review.body}
         rating={review.rating}

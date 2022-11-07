@@ -45,7 +45,6 @@ const RideShowContainer = (props) => {
         throw newError
       }
       const responseBody = await response.json()
-      debugger
       setReviews([...reviews, responseBody.review])
     } catch(err) { 
       console.error(`Error in Fetch: ${err.message}`)
