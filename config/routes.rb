@@ -5,14 +5,13 @@ Rails.application.routes.draw do
   get "/rides", to: "static_pages#index"
   get "/rides/new", to: "static_pages#authorized"
   get "/rides/:id", to: "static_pages#index"
-  get "/rides/:id", to: "static_pages#index"
   
   namespace :api do
     namespace :v1 do
-      post "/rides/search", to: "rides#search"
       resources :rides, only: [:index, :show] do
         resources :reviews, only: [:create]
       end
+      post "/rides/search", to: "rides#search"
     end
     resources :rides, only: [:new, :create]
   end

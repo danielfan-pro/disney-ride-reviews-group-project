@@ -5,7 +5,8 @@ class Api::V1::RidesController < ApiController
     render json: Ride.all
   end
 
-  def create 
+  def create
+    binding.pry 
     ride = Ride.new(ride_params)
     if ride.save
       render json: ride 
