@@ -7,11 +7,14 @@ class Api::V1::RidesController < ApiController
 
   def create
     ride = Ride.new(ride_params)
-    if ride.save
-      render json: ride 
-    else
-      render json: {errors: ride.errors.full_messages.to_sentence}, status: 401
-    end
+    ride.save
+    render json: ride
+
+    # if ride.save
+    #   render json: ride 
+    # else
+    #   render json: {errors: ride.errors.full_messages.to_sentence}, status: 401
+    # end
   end
 
   def show   

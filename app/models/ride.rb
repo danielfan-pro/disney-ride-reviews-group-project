@@ -4,4 +4,6 @@ class Ride < ApplicationRecord
   validates :description, presence: true
 
   has_many :reviews
+
+  mount_uploader :ride_photo, RidePhotoUploader
 end

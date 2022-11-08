@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom'
+import { useDropzone } from 'react-dropzone'
 
 const NewRide = (props) => {
   const [redirect, setRedirect] = useState(null)
@@ -29,6 +30,12 @@ const NewRide = (props) => {
 
   const handleSubmitNewRide = async (event) => {
     event.preventDefault()
+    let body = new FormData()
+    body.append("name", newRide.name)
+    body.append("location", newRide.location)
+    body.append("description", newRide.description)
+    body.append("ride_photo", newRide.image)
+
     try {
       const response = await fetch('/api/v1/rides', {
         method: "POST",
@@ -37,14 +44,15 @@ const NewRide = (props) => {
           "Content-Type": "application/json",
           "Accept": "application/json" 
         },
-        body: JSON.stringify({ ride: newRide })
+        body: body 
+        // JSON.stringify({ ride: newRide })
       })
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`
         const error = new Error(errorMessage)
         throw(error)
       }
-      console.log("Ride was added successfully!")
+
       const rideBody = await response.json()
       if (rideBody.ride.id) {
         setRedirect(rideBody.ride.id)
@@ -57,6 +65,13 @@ const NewRide = (props) => {
 
   if (redirect !== null) {
     return <Redirect to={`/rides/${redirect}`} />
+  }
+
+  const handleFileUpload = (acceptedFiles) => {
+    setNewRide({
+      ...newRide,
+      image: acceptedFiles[0]
+    })
   }
 
   return (
@@ -84,6 +99,17 @@ const NewRide = (props) => {
           Description:
           <textarea type="text" name="description" onChange={handleInputChange} value={newRide.description}/>
         </label>
+
+        <Dropzone onDrop={handleFileUpload}>
+          {({getRootProps, getInputProps}) => (
+            <section>
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                <p>Upload Ride Photo</p>
+              </div>
+            </section>
+          )}
+        </Dropzone>
 
         <input type="submit" value="Add Ride" />
       </form>

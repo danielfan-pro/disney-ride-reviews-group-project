@@ -18,12 +18,14 @@
               <ul class="menu">
                 <li><%= link_to 'Add Ride', '/rides/new', :class => "button alert hollow" %></li>
                 <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button alert hollow" %></li>
+                <img class="profile-icon" src='<%= current_user.profile_photo %>' />
               </ul>
             </div>
           <%- else -%>
             <div class="top-bar-right">
               <ul class="menu">
                 <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button alert hollow"  %></li>
+                <img class="profile-icon" src='<%= current_user.profile_photo %>' />
               </ul>
             </div>
           <%- end -%>
