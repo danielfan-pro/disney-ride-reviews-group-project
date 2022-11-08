@@ -5,7 +5,7 @@ import NewRide from './NewRide'
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-export const App = (props) => {
+export const App = () => {
   return (
       <BrowserRouter>
         <Switch>
@@ -14,7 +14,7 @@ export const App = (props) => {
           <Route exact path="/rides/new" component={NewRide} />
           <Route exact path="/rides/:id" component={RideShowContainer} />
         </Switch>
-    </BrowserRouter>
+      </BrowserRouter>
   )
 }
 
