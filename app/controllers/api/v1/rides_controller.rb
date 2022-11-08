@@ -6,7 +6,6 @@ class Api::V1::RidesController < ApiController
   end
 
   def create
-    binding.pry 
     ride = Ride.new(ride_params)
     if ride.save
       render json: ride 

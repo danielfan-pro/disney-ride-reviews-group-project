@@ -46,7 +46,6 @@ const NewRide = (props) => {
       }
       console.log("Ride was added successfully!")
       const rideBody = await response.json()
-      debugger
       if (rideBody.ride.id) {
         setRedirect(rideBody.ride.id)
       } 
