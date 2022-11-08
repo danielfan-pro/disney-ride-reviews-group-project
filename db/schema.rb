@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2022_11_04_195353) do
   create_table "rides", force: :cascade do |t|
     t.string "name", null: false
     t.string "location", null: false
-    t.string "image_url", null: false
+    t.string "image_url"
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

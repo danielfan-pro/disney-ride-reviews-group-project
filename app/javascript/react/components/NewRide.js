@@ -60,7 +60,9 @@ const NewRide = (props) => {
   }
 
   return (
-      <form className='ride-form' onSubmit={handleSubmitNewRide}>
+    <div className='new-ride-div'>
+      <h1>Add New Ride</h1>
+      <form className='new-ride' onSubmit={handleSubmitNewRide}>
         <label>
           Ride Name:
           <input type="text" name="name" onChange={handleInputChange} value={newRide.name}/>
@@ -80,11 +82,12 @@ const NewRide = (props) => {
 
         <label>
           Description:
-          <input type="text" name="description" onChange={handleInputChange} value={newRide.description}/>
+          <textarea type="text" name="description" onChange={handleInputChange} value={newRide.description}/>
         </label>
 
         <input type="submit" value="Add Ride" />
       </form>
+    </div>    
   )
 }
 

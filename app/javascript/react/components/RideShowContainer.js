@@ -37,7 +37,7 @@ const RideShowContainer = (props) => {
         body: JSON.stringify(payLoad),
         headers: new Headers({
           "Content-Type": "application/json",
-          Accept: "application/json",
+          "Accept": "application/json",
         }),
       })
       if (!response.ok) {

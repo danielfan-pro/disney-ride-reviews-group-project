@@ -95,7 +95,33 @@ ul.menu {
   }
 }
 
-.form-div {
-  width: 50rem;
+.new-review {
+  width: auto;
 }
 
+.new-ride {
+  margin: auto;
+  width: 50%;
+}
+
+.new-ride-div h1 {
+  text-align: center;
+}
+
+.write-review {
+  margin-right: 0;
+  display: inline-block;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.devise-form {
+  margin: auto;
+  width: 50%;
+}
+
+.form-header {
+  text-align: center;
+}
