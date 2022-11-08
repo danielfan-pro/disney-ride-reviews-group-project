@@ -5,5 +5,5 @@ class Review < ApplicationRecord
 
   belongs_to :ride
   belongs_to :user
-  
+  has_many :user_votes
 end
