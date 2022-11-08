@@ -46,13 +46,11 @@ RSpec.describe Api::V1::RidesController, type: :controller do
       )
 
       sign_in user_admin
-      
 
       previous_count = Ride.count
       post(:create, params: post_json, format: :json)
       
       returned_json = JSON.parse(response.body)["ride"]
-      
      
       expect(Ride.count).to eq(previous_count +1)
 
