@@ -5,6 +5,7 @@ class CreateRides < ActiveRecord::Migration[5.2]
       t.string :location, null: false
       t.string :image_url
       t.string :description, null: false
+      t.belongs_to :user
 
       t.timestamps null: false
     end

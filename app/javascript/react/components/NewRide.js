@@ -44,11 +44,17 @@ const NewRide = (props) => {
         const error = new Error(errorMessage)
         throw(error)
       }
-      console.log("Ride was added successfully!")
+
       const rideBody = await response.json()
-      if (rideBody.ride.id) {
+   
+      if (rideBody.ride) {
+        console.log("Ride was added successfully!")
         setRedirect(rideBody.ride.id)
-      } 
+      } else if (rideBody.error[0] === "Only admins have access to this feature") {
+        alert("Only admins have access to this feature")
+        // window.location("/rides")
+      }  
+      
     } catch(err) {
       console.error(`Error in fetch: ${err.message}`)
     }

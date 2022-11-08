@@ -4,4 +4,5 @@ class Ride < ApplicationRecord
   validates :description, presence: true
 
   has_many :reviews
+  belongs_to :user
 end

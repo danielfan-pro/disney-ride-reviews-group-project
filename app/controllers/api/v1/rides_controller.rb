@@ -7,10 +7,12 @@ class Api::V1::RidesController < ApiController
 
   def create
     ride = Ride.new(ride_params)
+    ride.user = current_user
+    
     if ride.save
       render json: ride 
     else
-      render json: {errors: ride.errors.full_messages.to_sentence}, status: 401
+      render json: {errors: ride.errors.full_messages.to_sentence}
     end
   end
 
@@ -22,16 +24,7 @@ class Api::V1::RidesController < ApiController
     render json: Ride.where("name ILIKE ?", "%#{params['search_string']}%")
   end
 
-  def authorized  
-  end
-
-  protected
-
-  def authorize_admin
-    if !user_signed_in? || !(current_user.role == "admin")
-      render json: {error: ["Only admins have access to this feature"]}
-    end
-  end
+  private
 
   def ride_params
     params.require(:ride).permit(:name, :location, :image_url, :description)
