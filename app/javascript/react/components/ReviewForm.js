@@ -64,9 +64,9 @@ const ReviewForm = (props) => {
       )
     }
   }
-
+  
   return (
-    <div className="review-form-div">
+    <div className={`review-form-div ${props.reviewButton}`}>
       <button className="button write-review" type="button" onClick={displayReviewForm}>Write Review</button>
 
       <form onSubmit={handleSubmitAddNewReview} className={`new-review ${displayForm}`}>

@@ -2,6 +2,12 @@ import React from 'react';
 
 const ReviewTile = (props) => {
   
+  let reviewImage
+  
+  if (props.image !== null) {
+    reviewImage = <img src= {props.image} className="review-photo"/>
+  }
+  
   return (
     <div className="grid-x grid-margin-x">
       <div className='cell small-12 medium-8 large-8 callout'>
@@ -13,11 +19,9 @@ const ReviewTile = (props) => {
 
         <p>Title: {props.title}</p>
         <p>Review: {props.body}</p> 
+        {reviewImage}
       </div>
 
-        <div className='cell medium-4 large-4'>
-          <p>Extra padding</p>
-        </div>
     </div>
   )
 }
