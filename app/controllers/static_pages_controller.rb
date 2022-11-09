@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
   def authorized  
   end
 
+  def authenticated  
+  end
+
 end

@@ -5,4 +5,6 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :rides
+
+  mount_uploader :profile_photo, ProfilePhotoUploader
 end

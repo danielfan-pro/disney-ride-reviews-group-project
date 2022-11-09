@@ -1,14 +1,33 @@
 import React, { useState } from "react"
+import Dropzone from 'react-dropzone'
 import ErrorList from "./ErrorList"
 
 const ReviewForm = (props) => {
   const [newReview, setNewReview] = useState({
     title: "",
     body: "",
-    rating: ""
+    rating: "",
+    photo: ""
   })
 
   const [errors, setErrors] = useState({}) 
+  const [displayForm, setDisplayForm] = useState("hide")
+
+  const displayReviewForm = () => {
+    if (displayForm === 'hide') {
+      setDisplayForm('show')
+    }
+    else {
+      setDisplayForm('hide')
+    }
+  }
+
+  const handleFileUpload = (acceptedFiles) => {
+    setNewReview({
+      ...newReview,
+      photo: acceptedFiles[0]
+    })
+  }
   
   const handleFormChange =(event) => {
     setNewReview({
@@ -39,17 +58,18 @@ const ReviewForm = (props) => {
       setNewReview({
         title: "",
         body: "",
-        rating: ""
+        rating: "",
+        photo: ""
       }
       )
     }
   }
-
+  
   return (
-    <div className="review-form-div">
-      <button className="button write-review" type="button">Write Review</button>
+    <div className={`review-form-div ${props.reviewButton}`}>
+      <button className="button write-review" type="button" onClick={displayReviewForm}>Write Review</button>
 
-      <form onSubmit={handleSubmitAddNewReview} className='new-review'>
+      <form onSubmit={handleSubmitAddNewReview} className={`new-review ${displayForm}`}>
         <ErrorList errors={errors} />
         <label htmlFor="title">Review Headline
           <input id="title" type="text" name="title" value={newReview.title} onChange={handleFormChange}/>
@@ -63,6 +83,19 @@ const ReviewForm = (props) => {
           <input id="rating" type="number" name="rating" value={newReview.rating} onChange={handleFormChange}/>
         </label>
 
+      <div className="dropzone">  
+        <Dropzone onDrop={handleFileUpload}>
+          {({getRootProps, getInputProps}) => (
+            <section>
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                <p>Drag 'n' drop some files here, or click to select files</p>
+              </div>
+            </section>
+          )}
+        </Dropzone>
+      </div>      
+        
         <input type="submit" />
       </form>
     </div>

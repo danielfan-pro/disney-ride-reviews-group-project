@@ -3,6 +3,7 @@ import ReviewTile from "./ReviewTile";
 import ReviewForm from "./ReviewForm";
 
 const RideShow = (props) => {
+
   const reviewTiles = props.reviews.map((review) => {
     return (
       <ReviewTile
@@ -12,6 +13,7 @@ const RideShow = (props) => {
         rating={review.rating}
         created_at={review.created_at}
         username={review.user.username}
+        image={review.image}
       />
     );
   });
@@ -26,13 +28,15 @@ const RideShow = (props) => {
         </div>
 
         <div className="small-12 medium-4 large-4 form-div">
-          <ReviewForm addNewReview={props.addNewReview} />
+          <ReviewForm
+            addNewReview={props.addNewReview}
+            reviewButton = {props.reviewButton}
+          />
         </div>
       </div>
-
-      <div className="grid-x grid-margin-x">
+      
         {reviewTiles}
-      </div>
+
     </div>
   );
 };
