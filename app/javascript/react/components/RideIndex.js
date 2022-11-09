@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import RideTile from './RideTile'
 import SearchBar from './SearchBar.js';
 
-
 const RideIndex = (props) => {
   const [rides, setRides] = useState([])
 
