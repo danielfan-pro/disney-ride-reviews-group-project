@@ -11,6 +11,16 @@ const ReviewForm = (props) => {
   })
 
   const [errors, setErrors] = useState({}) 
+  const [displayForm, setDisplayForm] = useState("hide")
+
+  const displayReviewForm = () => {
+    if (displayForm === 'hide') {
+      setDisplayForm('show')
+    }
+    else {
+      setDisplayForm('hide')
+    }
+  }
 
   const handleFileUpload = (acceptedFiles) => {
     setNewReview({
@@ -57,9 +67,9 @@ const ReviewForm = (props) => {
 
   return (
     <div className="review-form-div">
-      <button className="button write-review" type="button">Write Review</button>
+      <button className="button write-review" type="button" onClick={displayReviewForm}>Write Review</button>
 
-      <form onSubmit={handleSubmitAddNewReview} className='new-review'>
+      <form onSubmit={handleSubmitAddNewReview} className={`new-review ${displayForm}`}>
         <ErrorList errors={errors} />
         <label htmlFor="title">Review Headline
           <input id="title" type="text" name="title" value={newReview.title} onChange={handleFormChange}/>
@@ -73,6 +83,7 @@ const ReviewForm = (props) => {
           <input id="rating" type="number" name="rating" value={newReview.rating} onChange={handleFormChange}/>
         </label>
 
+      <div className="dropzone">  
         <Dropzone onDrop={handleFileUpload}>
           {({getRootProps, getInputProps}) => (
             <section>
@@ -83,7 +94,8 @@ const ReviewForm = (props) => {
             </section>
           )}
         </Dropzone>
-
+      </div>      
+        
         <input type="submit" />
       </form>
     </div>

@@ -29,10 +29,9 @@ const RideShow = (props) => {
           <ReviewForm addNewReview={props.addNewReview} />
         </div>
       </div>
-
-      <div className="grid-x grid-margin-x">
+      
         {reviewTiles}
-      </div>
+
     </div>
   );
 };

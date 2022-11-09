@@ -6,14 +6,23 @@
 }
 
 .top-bar {
-  background-image: url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/textures/nav-textures/nav_texture_1366.png),url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/svg/nav_footer_background.svg),linear-gradient(95deg, #5c5c8a 3%, #9a6e8d 35%, #bc865c 65%, #7f847b 85%, #5c5c8a 96%);
+  background-image: url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/textures/nav-textures/nav_texture_1366.png),
+    url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/svg/nav_footer_background.svg),
+    linear-gradient(
+      95deg,
+      #5c5c8a 3%,
+      #9a6e8d 35%,
+      #bc865c 65%,
+      #7f847b 85%,
+      #5c5c8a 96%
+    );
 }
 
 nav.top-bar {
   padding: 0;
 }
 .button {
-  margin: .5rem;
+  margin: 0.5rem;
   color: $button;
 }
 
@@ -47,17 +56,17 @@ ul.menu {
 }
 
 .ride-location {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
   font-style: oblique;
 }
 
 .ride-name {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   font-weight: bold;
 }
 
@@ -67,7 +76,7 @@ ul.menu {
 }
 
 .top-bar input {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
@@ -77,7 +86,6 @@ ul.menu {
   margin-right: 4rem;
   row-gap: 2rem;
 }
-
 
 .input-group-rounded {
   width: 25rem;
@@ -90,7 +98,7 @@ ul.menu {
   }
 
   .input-group-button .button {
-    border-radius:  0 5000px 5000px 0;
+    border-radius: 0 5000px 5000px 0;
     font-size: 0.8rem;
   }
 }
@@ -132,4 +140,11 @@ ul.menu {
   margin-top: 0.5rem;
   margin-right: 1rem;
   border-radius: 50%;
+}
+
+.dropzone {
+  text-align: center;
+  padding: 20px;
+  border: 1px grey dashed;
+  margin: auto;
 }
