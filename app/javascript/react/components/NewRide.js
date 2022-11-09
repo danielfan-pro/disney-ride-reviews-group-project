@@ -52,7 +52,6 @@ const NewRide = (props) => {
         setRedirect(rideBody.ride.id)
       } else if (rideBody.error[0] === "Only admins have access to this feature") {
         alert("Only admins have access to this feature")
-        // window.location("/rides")
       }  
       
     } catch(err) {
