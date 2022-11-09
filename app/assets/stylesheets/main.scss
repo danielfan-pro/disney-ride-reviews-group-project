@@ -17,7 +17,7 @@ nav.top-bar {
   padding: 0.5rem;
 }
 .button {
-  margin: .5rem;
+  margin: 0.5rem;
   color: $button;
 }
 
@@ -56,17 +56,17 @@ ul.menu {
 }
 
 .ride-location {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
   font-style: oblique;
 }
 
 .ride-name {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   font-weight: bold;
   font-family:"Arima Madurai";
   font-size: 1.5rem;
@@ -86,7 +86,7 @@ ul.menu {
 }
 
 .top-bar input {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
@@ -109,7 +109,7 @@ ul.menu {
   }
 
   .input-group-button .button {
-    border-radius:  0 5000px 5000px 0;
+    border-radius: 0 5000px 5000px 0;
     font-size: 0.8rem;
   }
 }
@@ -182,12 +182,12 @@ ul.menu {
   padding-top: 1rem;
 }
 
-.zoom-on-hover[_nghost-xau-c59] img[_ngcontent-xau-c59], .zoom-on-hover [_nghost-xau-c59] img[_ngcontent-xau-c59] {
-  transform: scaleX(1) scaleY(1) scaleZ(1);
-  transition: transform 1.6s ease 0s;
-}
-
 .sign-in-up-buttons {
   border-radius: 50%;
   background-color: $image-box;
+}
+
+.review-photo {
+  width: 5rem;
+  height: 5rem;
 }

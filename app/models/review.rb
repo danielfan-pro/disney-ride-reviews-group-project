@@ -6,4 +6,5 @@ class Review < ApplicationRecord
   belongs_to :ride
   belongs_to :user
   
+  mount_uploader :photo, ReviewPhotoUploader
 end

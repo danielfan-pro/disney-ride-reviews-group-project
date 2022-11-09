@@ -4,6 +4,9 @@ import RideShow from "./RideShow";
 const RideShowContainer = (props) => {
   const [ride, setRide] = useState({});
   const [reviews, setReviews] = useState([]);
+  const [signedIn, setSignedIn] = useState(false)
+
+  let reviewButton = 'hide'
 
   const rideId = props.match.params.id;
 
@@ -16,41 +19,49 @@ const RideShowContainer = (props) => {
         throw error;
       }
       const responseBody = await response.json();
-
+      
       setRide(responseBody.ride);
       setReviews(responseBody.ride.reviews);
+      
+      if (responseBody.ride.current_user !== null) {
+        
+        setSignedIn(true)
+      }
     } catch (err) {
       console.error(`Error in Fetch: ${err.message}`);
     }
   };
 
+    
+  if (signedIn !== false) {
+    reviewButton = 'show'
+  }
+  
   useEffect(() => {
     fetchRide();
   }, []);
 
+
+
   const addNewReview = async (payLoad) => {
-    let body = new FormData()
-    body.append("title", payLoad.title)
-    body.append("body", payLoad.body)
-    body.append("rating", payLoad.rating)
-    body.append("photo", payLoad.photo)
+    let body = new FormData();
+    body.append("title", payLoad.title);
+    body.append("body", payLoad.body);
+    body.append("rating", payLoad.rating);
+    body.append("ride_id", rideId);
+    body.append("photo", payLoad.photo);
 
     try {
       const response = await fetch(`/api/v1/rides/${rideId}/reviews`, {
         method: "POST",
         credentials: "same-origin",
         body: body,
-        headers: new Headers({
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        }),
       });
       if (!response.ok) {
         const newError = new Error(`${response.status} ${response.statusText}`);
         throw newError;
       }
       const responseBody = await response.json();
-      debugger
       setReviews([...reviews, responseBody.review]);
     } catch (err) {
       console.error(`Error in Fetch: ${err.message}`);
@@ -68,6 +79,7 @@ const RideShowContainer = (props) => {
       reviews={reviews}
       setReviews={setReviews}
       addNewReview={addNewReview}
+      reviewButton = {reviewButton}
     />
   );
 };
