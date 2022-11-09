@@ -36,12 +36,20 @@ const ReviewForm = (props) => {
     event.preventDefault()
     if (validForSubmission()){
       props.addNewReview(newReview)
+      setNewReview({
+        title: "",
+        body: "",
+        rating: ""
+      }
+      )
     }
   }
 
   return (
-    <div className="form-div">
-      <form onSubmit={handleSubmitAddNewReview}>
+    <div className="review-form-div">
+      <button className="button write-review" type="button">Write Review</button>
+
+      <form onSubmit={handleSubmitAddNewReview} className='new-review'>
         <ErrorList errors={errors} />
         <label htmlFor="title">Review Headline
           <input id="title" type="text" name="title" value={newReview.title} onChange={handleFormChange}/>

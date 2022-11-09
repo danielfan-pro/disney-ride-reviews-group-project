@@ -9,7 +9,7 @@ class Api::V1::ReviewsController < ApiController
     if review.save
       render json: review
     else
-      render json: {errors: review.errors.full_messages.to_sentence}, status: 401
+      render json: {errors: review.errors.full_messages.to_sentence}
     end
   end
 

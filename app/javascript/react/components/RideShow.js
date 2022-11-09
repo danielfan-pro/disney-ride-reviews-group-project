@@ -15,19 +15,24 @@ const RideShow = (props) => {
       />
     );
   });
-  
+
   return (
     <div className="ride-show">
-      <div className="image-box">
-        <h1>{props.name}</h1>
-        <h2>{props.location}</h2>
-        <img src={props.image_url} alt={props.name} className="image-tile" />
-      </div>
-        {reviewTiles}
+      <div className="grid-x grid-margin-x">
+        <div className="small-12 medium-8 large-8">
+          <h3>{props.name}</h3>
+          <h4>{props.location}</h4>
+          <img src={props.image_url} alt={props.name} className="image-tile" />
+        </div>
 
-        <ReviewForm 
-          addNewReview={props.addNewReview}
-        />
+        <div className="small-12 medium-4 large-4 form-div">
+          <ReviewForm addNewReview={props.addNewReview} />
+        </div>
+      </div>
+
+      <div className="grid-x grid-margin-x">
+        {reviewTiles}
+      </div>
     </div>
   );
 };

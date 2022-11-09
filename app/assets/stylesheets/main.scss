@@ -3,19 +3,19 @@
 .logo {
   width: 5rem;
   border-radius: 0.313rem;
- }
+}
 
 .top-bar {
   background-image: url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/textures/nav-textures/nav_texture_1366.png),url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/svg/nav_footer_background.svg),linear-gradient(95deg, #5c5c8a 3%, #9a6e8d 35%, #bc865c 65%, #7f847b 85%, #5c5c8a 96%);
- }
+}
 
- nav.top-bar {
+nav.top-bar {
   padding: 0;
- }
- .button {
+}
+.button {
   margin: .5rem;
   color: $button;
- }
+}
 
 .top-bar input {
   max-width: 200rem;
@@ -95,7 +95,33 @@ ul.menu {
   }
 }
 
-.form-div {
-  width: 50rem;
+.new-review {
+  width: auto;
 }
 
+.new-ride {
+  margin: auto;
+  width: 50%;
+}
+
+.new-ride-div h1 {
+  text-align: center;
+}
+
+.write-review {
+  margin-right: 0;
+  display: inline-block;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.devise-form {
+  margin: auto;
+  width: 50%;
+}
+
+.form-header {
+  text-align: center;
+}
