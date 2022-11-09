@@ -72,20 +72,22 @@ const ReviewForm = (props) => {
         <label htmlFor="rating">Review Rating
           <input id="rating" type="number" name="rating" value={newReview.rating} onChange={handleFormChange}/>
         </label>
-
-        <Dropzone onDrop={handleFileUpload}>
-          {({getRootProps, getInputProps}) => (
-            <section>
-              <div {...getRootProps()}>
-                <input {...getInputProps()} />
-                <p>Drag 'n' drop some files here, or click to select files</p>
-              </div>
-            </section>
-          )}
-        </Dropzone>
-
-
-        <input type="submit" />
+        
+        <div className="dropzone">
+          <Dropzone onDrop={handleFileUpload}>
+            {({getRootProps, getInputProps}) => (
+              <section>
+                <div {...getRootProps()}>
+                  <input {...getInputProps()} />
+                  <p>Drag images here, or click to select files</p>
+                </div>
+              </section>
+            )}
+          </Dropzone>
+        </div>
+        <div className="submit-button">
+          <input type="submit" />
+        </div>
       </form>
     </div>
 )}

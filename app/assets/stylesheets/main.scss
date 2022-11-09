@@ -1,5 +1,5 @@
 @import "colors";
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Arima+Madurai&');
 
 .logo {
   width: 5rem;
@@ -8,10 +8,13 @@
 
 .top-bar {
   background-image: url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/textures/nav-textures/nav_texture_1366.png),url(https://cdn1.parksmedia.wdprapps.disney.com/media/layout/assets/themes/wdw-50th/svg/nav_footer_background.svg),linear-gradient(95deg, #5c5c8a 3%, #9a6e8d 35%, #bc865c 65%, #7f847b 85%, #5c5c8a 96%);
+  font-size: 3rem;
+  font-family: "Arima Madurai";
+  text-align: center;
 }
 
 nav.top-bar {
-  padding: 0;
+  padding: 0.5rem;
 }
 .button {
   margin: .5rem;
@@ -26,6 +29,7 @@ nav.top-bar {
 .button.hollow.alert {
   border: none;
   color: $button;
+  padding: 0rem
 }
 
 ul.menu {
@@ -47,9 +51,8 @@ ul.menu {
   padding-left: 5rem;
 }
 
-.location-title {
-  font-family: "Amatic SC";
-  font-weight: 2rem;
+.park-and-ride-title { 
+  font-family: "Arima Madurai";
 }
 
 .ride-location {
@@ -65,6 +68,8 @@ ul.menu {
   text-align: center;
   padding-top: .5rem;
   font-weight: bold;
+  font-family:"Arima Madurai";
+  font-size: 1.5rem;
 }
 
 .image-tile-index {
@@ -73,8 +78,11 @@ ul.menu {
 }
 
 .image-tile-show {
-  height: 28rem;
-  width: 50rem
+  display: block;
+  max-height: 28rem;
+  max-width: 50rem;
+  width: auto;
+  height: auto;
 }
 
 .top-bar input {
@@ -94,6 +102,7 @@ ul.menu {
   margin-top: 0.5rem;
   margin-left: auto;
   padding-right: 1rem;
+
   .input-group-field {
     border-radius: 5000px 0 0 5000px;
     padding-left: 1rem;
@@ -144,13 +153,8 @@ ul.menu {
   border-radius: 50%;
 }
 
-.ride-index-title {
-  text-align: center;
-  font-family: 'Cookie', cursive;
-}
-
 .grid-margin-x .small-4 {
-  margin-left:0rem;
+  margin-left: 0rem;
 }
 
 .review-form-div {
@@ -167,3 +171,23 @@ ul.menu {
   padding-bottom: 0.5rem;
 };
 
+.dropzone {
+  text-align: center;
+  padding: 1.25rem;
+  border: 0.063rem grey dashed;
+  padding-bottom: 1rem;
+};
+
+.submit-button {
+  padding-top: 1rem;
+}
+
+.zoom-on-hover[_nghost-xau-c59] img[_ngcontent-xau-c59], .zoom-on-hover [_nghost-xau-c59] img[_ngcontent-xau-c59] {
+  transform: scaleX(1) scaleY(1) scaleZ(1);
+  transition: transform 1.6s ease 0s;
+}
+
+.sign-in-up-buttons {
+  border-radius: 50%;
+  background-color: $image-box;
+}
