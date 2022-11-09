@@ -54,7 +54,7 @@ user_6 = User.create(
 ride_1 = Ride.find_or_create_by(
   name: "Journey of The Little Mermaid", 
   location: "Fantasyland", 
-  image_url: "https://i.imgur.com/eAuaWBM.jpeg",
+  image_url: "https://i.imgur.com/1Y5s8uK.jpg",
   description: "Revisit the classic “tail” of how one lucky little mermaid found true love… and legs." ,
   user: user_admin
   )
@@ -123,15 +123,15 @@ review_1 = Review.find_or_create_by(
   title: 'Fun kids’ ride',
   body: 'Emerge from the ocean’s depths in time to celebrate Ariel’s happily ever after in a spectacular fairytale finale.',
   rating: 5,
-  user: user_1,
-  ride: ride_1 
+  user_id: user_1,
+  ride_id: ride_1 
 )
 
 review_2 = Review.find_or_create_by(
   title: 'Better than the movie',
   body: 'Watch for angry hippos, hungry lions and “sleeping” zebras along the Nile and be on the lookout for a missing Jungle Cruise vessel and its helpless passengers. As the cruise continues down the Mekong River, you just might learn that the jungle always gets the last laugh.',
   rating: 4,
-  user: user_1,
+  user_id: user_1,
   ride_id: ride_2
 )
 
@@ -139,8 +139,8 @@ review_3 = Review.find_or_create_by(
   title: 'It’s a 10-minute, 10,000-mile journey that you won’t soon forget!',
   body: 'Steam past lush foliage, butterflies and waterfalls on the Amazon in South America. Glimpse an abandoned camp overrun by curious gorillas on the shores of the African Congo.',
   rating: 4,
-  user: user_2,
-  ride: ride_2 
+  user_id: user_2,
+  ride_id: ride_2 
 )
 
 

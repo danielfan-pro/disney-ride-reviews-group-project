@@ -58,7 +58,7 @@ const ReviewForm = (props) => {
   return (
     <div className="review-form-div">
       <button className="button write-review" type="button">Write Review</button>
-
+      
       <form onSubmit={handleSubmitAddNewReview} className='new-review'>
         <ErrorList errors={errors} />
         <label htmlFor="title">Review Headline
@@ -83,6 +83,7 @@ const ReviewForm = (props) => {
             </section>
           )}
         </Dropzone>
+
 
         <input type="submit" />
       </form>
