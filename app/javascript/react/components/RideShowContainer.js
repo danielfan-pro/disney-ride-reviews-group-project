@@ -29,11 +29,17 @@ const RideShowContainer = (props) => {
   }, []);
 
   const addNewReview = async (payLoad) => {
+    let body = new FormData()
+    body.append("title", payLoad.title)
+    body.append("body", payLoad.body)
+    body.append("rating", payLoad.rating)
+    body.append("photo", payLoad.photo)
+
     try {
       const response = await fetch(`/api/v1/rides/${rideId}/reviews`, {
         method: "POST",
         credentials: "same-origin",
-        body: JSON.stringify(payLoad),
+        body: body,
         headers: new Headers({
           "Content-Type": "application/json",
           "Accept": "application/json",
@@ -44,6 +50,7 @@ const RideShowContainer = (props) => {
         throw newError;
       }
       const responseBody = await response.json();
+      debugger
       setReviews([...reviews, responseBody.review]);
     } catch (err) {
       console.error(`Error in Fetch: ${err.message}`);

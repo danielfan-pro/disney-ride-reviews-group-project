@@ -1,14 +1,23 @@
 import React, { useState } from "react"
+import Dropzone from 'react-dropzone'
 import ErrorList from "./ErrorList"
 
 const ReviewForm = (props) => {
   const [newReview, setNewReview] = useState({
     title: "",
     body: "",
-    rating: ""
+    rating: "",
+    photo: ""
   })
 
   const [errors, setErrors] = useState({}) 
+
+  const handleFileUpload = (acceptedFiles) => {
+    setNewReview({
+      ...newReview,
+      photo: acceptedFiles[0]
+    })
+  }
   
   const handleFormChange =(event) => {
     setNewReview({
@@ -39,7 +48,8 @@ const ReviewForm = (props) => {
       setNewReview({
         title: "",
         body: "",
-        rating: ""
+        rating: "",
+        photo: ""
       }
       )
     }
@@ -62,6 +72,17 @@ const ReviewForm = (props) => {
         <label htmlFor="rating">Review Rating
           <input id="rating" type="number" name="rating" value={newReview.rating} onChange={handleFormChange}/>
         </label>
+
+        <Dropzone onDrop={handleFileUpload}>
+          {({getRootProps, getInputProps}) => (
+            <section>
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                <p>Drag 'n' drop some files here, or click to select files</p>
+              </div>
+            </section>
+          )}
+        </Dropzone>
 
         <input type="submit" />
       </form>

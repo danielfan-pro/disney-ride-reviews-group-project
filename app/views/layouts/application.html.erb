@@ -12,21 +12,44 @@
   <nav class="top-bar">     
     <a href="/rides" class="logo"><%= image_tag("disney-final.png", alt: "Logo") %></a> 
     <div>
-        <%- if current_user -%>
+
+        <% default_profile = '/Default_profile.png' %>
+
+        <%- if current_user && current_user[:profile_photo].nil? == false -%>           
           <%- if current_user.role == "admin" -%>
             <div class="top-bar-right">
               <ul class="menu">
                 <li><%= link_to 'Add Ride', '/rides/new', :class => "button alert hollow" %></li>
-                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button alert hollow" %></li>
+                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, data: { confirm: 'Confirm Sign Out?' }, :class => "button alert hollow" %></li>
+                <img class="profile-icon" src='<%= current_user.profile_photo %>' />
               </ul>
             </div>
           <%- else -%>
             <div class="top-bar-right">
               <ul class="menu">
-                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button alert hollow"  %></li>
+                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, data: { confirm: 'Confirm Sign Out?' }, :class => "button alert hollow"  %></li>
+                <img class="profile-icon" src='<%= current_user.profile_photo %>' />
               </ul>
             </div>
           <%- end -%>
+        <%- elsif current_user && current_user[:profile_photo].nil? -%>    
+          <%- if current_user.role == "admin" -%>
+            <div class="top-bar-right">
+              <ul class="menu">
+                <li><%= link_to 'Add Ride', '/rides/new', :class => "button alert hollow" %></li>
+                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, data: { confirm: 'Sign Out?' }, :class => "button alert hollow" %></li>
+                <img class="profile-icon" src='<%= default_profile %>' />
+              </ul>
+            </div>
+          <%- else -%>
+            <div class="top-bar-right">
+              <ul class="menu">
+                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, data: { confirm: 'Sign Out?' }, :class => "button alert hollow"  %></li>
+                <img class="profile-icon" src='<%= default_profile %>' />
+              </ul>
+            </div>
+          <%- end -%> 
+          
         <%- else -%>
           <div class="top-bar-right">
             <ul class="menu">
@@ -37,7 +60,6 @@
         <%- end -%>
     </div>
   </nav>
-
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">

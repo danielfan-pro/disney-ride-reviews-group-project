@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_04_195353) do
+ActiveRecord::Schema.define(version: 2022_11_09_041205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2022_11_04_195353) do
     t.bigint "ride_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["ride_id"], name: "index_reviews_on_ride_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2022_11_04_195353) do
     t.datetime "updated_at", null: false
     t.string "username", null: false
     t.string "role", default: "member", null: false
+    t.string "profile_photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
