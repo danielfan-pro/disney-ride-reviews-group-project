@@ -72,6 +72,7 @@ const ReviewForm = (props) => {
       }
       )
     }
+    setDisplayForm("hide")
   }
   
   return (

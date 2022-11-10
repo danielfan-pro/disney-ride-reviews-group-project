@@ -58,6 +58,7 @@ ul.menu {
   border-style: solid;
   background-color: $image-box;
   color: $button;
+  border-radius: 1rem;
 }
 
 .park-section {
@@ -89,6 +90,12 @@ ul.menu {
 .image-tile-index {
   height: auto;
   width: auto;
+  border-radius: 1rem;
+}
+
+.image-tile-index:hover {
+  transform: scaleX(1.1) scaleY(1.1) scaleZ(1);
+  transition: transform 1.6s ease 0s;
 }
 
 .image-tile-show {
@@ -97,6 +104,10 @@ ul.menu {
   max-width: 50rem;
   width: auto;
   height: auto;
+}
+
+.ride-review-image {
+  border-radius: 1rem;
 }
 
 .top-bar input {
@@ -185,12 +196,15 @@ ul.menu {
   padding-bottom: 0.5rem;
 };
 
+.callout {
+  border-radius: 1rem;
+}
+
 .dropzone {
   text-align: center;
   padding: 3rem;
   border: 0.063rem grey dashed;
   background: #ffffff;
-  color: grey;
 };
 
 .submit-button {
@@ -203,6 +217,376 @@ ul.menu {
 }
 
 .review-photo {
-  width: 5rem;
-  height: 5rem;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 1rem;
+}
+
+@mixin flag-styles($bottom, $right, $delay) {
+  position: absolute;
+  bottom: $bottom;
+  right: $right;
+
+  content: '';
+  display: block;
+  transform-origin: right;
+
+  animation: .3s wave $delay infinite;
+  background: $light-blue;
+  -webkit-clip-path: polygon(100% 0, 0 47%, 100% 100%);
+          clip-path: polygon(100% 0, 0 47%, 100% 100%);
+  height: .6rem;
+  width: 1.2rem;  
+}
+
+@keyframes wave {
+  0%, 100% { transform: skew(0) }
+  50% { transform: skew(0, 15deg) }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: block;
+  margin: auto;
+  position: relative;
+  top: -70px;
+  width: 500px;
+  height: 500px;
+}
+
+.magic-kingdom {
+  display: block;
+text-align: center;
+  border: none;
+
+}
+
+.arc {
+  position: absolute;
+  right: -3rem;
+  width: 120%;
+  height: 100%;
+  
+  circle {
+    cx: 50%;
+    cy: 100%;
+    r: 53.5%;
+    fill: transparent;
+    stroke-width: 2;
+    stroke: $dark-blue;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    stroke-dasharray: 1870;
+    stroke-dashoffset: 1870;
+    animation: offset 2.5s ease-out 1s forwards;
+  }
+}
+
+@keyframes offset {
+  to { stroke-dashoffset: 0 }
+}
+  
+.castle {
+  background-color: $light-blue;
+}
+
+.portcullis {
+  position: absolute;
+  left: 41%;
+  bottom: -7%;
+
+  background: $dark-blue;
+  border-radius: 50% 50% 0 0 / 50% 50% 0 0;
+  height: 20%;
+  width: 20%;
+  transition: border-radius .3s;
+  z-index: 2;
+
+  &:hover {
+    border-radius: 50%;
+
+    &::before { 
+      background-color: $dark-blue;
+      border-radius: 50%;
+      width: 60%;
+      height: 60%;
+    }
+
+    &::after {  
+      background-color: $dark-blue;
+      border-radius: 50%;
+      width: 60%;
+      height: 60%;
+    } 
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 67%;
+    right: 65%;
+    content: '';
+    transition: all .3s;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 67%;
+    right: -20%;
+    content: '';
+    transition: all .3s;
+  }
+}
+
+.base-1 {
+  position: absolute;
+  left: 15.5%;
+  bottom: 0;
+
+  width: 70%;
+  height: 10%;
+}
+
+.base-2 {
+  position: absolute;
+  left: 20%;
+  bottom: 9%;
+
+  width: 65%;
+  height: 7%;
+}
+
+.base-3 {
+  position: absolute;
+  left: 24%;
+  bottom: 15%;
+
+  width: 55%;
+  height: 6%;
+}
+
+.base-4 {
+  position: absolute;
+  left: 24%;
+  bottom: 20%;
+
+  width: 50%;
+  height: 6%;
+
+  &::after {
+    position: absolute;
+    bottom: 50%;
+    left: 76%;
+
+    border-top: 0px solid transparent;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 60px solid $light-blue;
+    content: '';
+    display: block;
+  }
+}
+
+.base-tower {
+  position: absolute;
+
+  width: 0;
+  height: 0;
+  border-top: 0px solid transparent;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 60px solid $light-blue;
+}
+
+.left {
+  bottom: 9.5%;
+  left: 12.5%;
+
+  &::after { 
+    @include flag-styles(10%, 10%, .2s);
+  }
+}
+
+.right {
+  bottom: 9.5%;
+  left: 76.5%;
+
+  &::after { 
+    @include flag-styles(10%, 10%, .4s);
+  }
+}
+
+.mid-tower-left {
+  position: absolute;
+  left: 24%;
+  bottom: 15%;
+
+  width: 9%;
+  height: 13%;
+
+  &::after {
+    position: absolute;
+    top: -20%;
+    left: -13px;
+
+    border-top: 45px solid $light-blue;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 0px solid transparent;
+    content: '';
+    display: block; 
+  }
+}
+
+.mid-tower-left-roof {
+  position: absolute;
+  left: 22.3%;
+  bottom: 30%;
+
+  border-top: 0px solid transparent;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 60px solid $light-blue;
+
+  &::after {  
+    @include flag-styles(10%, 10%, .6s);
+  }
+}
+
+.mid-tower-right {
+  position: absolute;
+  left: 71%;
+  bottom: 20.8%;
+
+  border-top: 0px solid transparent;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 70px solid $light-blue;
+
+  &::after { 
+    @include flag-styles(10%, 0, .8s);
+  }
+}
+
+.level-2-tower-left {
+  position: absolute;
+  left: 34%;
+  bottom: 25%;
+
+  border-top: 0px solid transparent;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  border-bottom: 70px solid $light-blue;
+}
+
+.level-3-tower {
+  position: absolute;
+  left: 65%;
+  bottom: 26%;
+
+  width: 5%;
+  height: 12%;
+}
+
+.level-3-tower-roof {
+  position: absolute;
+  bottom: 37%;
+  right: 28.5%;
+
+  border-top: 0px solid transparent;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid $light-blue;
+}
+
+.keep {
+  position: absolute;
+  left: 42.5%;
+  bottom: 25%;
+
+  width: 23%;
+  height: 10.5%;
+}
+
+.side-tower {
+  position: absolute;
+  bottom: 28%;
+  left: 40.75%;
+
+  border-top: 40px solid $light-blue;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 0px solid transparent;
+  width: 5px;
+}
+
+.side-tower.roof {
+  position: absolute;
+  bottom: 38%;
+  left: 41%;
+
+  border-top: 0px solid transparent;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 45px solid $light-blue;
+  width: 0;
+
+  &::after {
+    @include flag-styles(1%, 10%, .1s);
+  }
+}
+
+.keep-main {
+  position: absolute;
+  left: 49.3%;
+  bottom: 35%;
+
+  width: 14%;
+  height: 16%;
+  -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 49%, 50% 49%);
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 49%, 50% 49%);
+}
+
+.main-side-roof {
+  position: absolute;
+  left: 49.3%;
+  bottom: 43%;
+
+  border-top: 0px solid transparent;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 45px solid $light-blue;
+  width: 0;
+}
+
+.main-tower {
+  position: absolute;
+  left: 54.7%;
+  bottom: 50%;
+
+  width: 10%;
+  height: 10%;
+  -webkit-clip-path: polygon(16% 0, 85% 0, 85% 38%, 100% 38%, 86% 100%, 15% 100%, 0 37%, 16% 37%);
+clip-path: polygon(16% 0, 85% 0, 85% 38%, 100% 38%, 86% 100%, 15% 100%, 0 37%, 16% 37%);
+}
+
+.main-tower-roof {
+  position: absolute;
+  left: 54.7%;
+  bottom: 59%;
+
+  border-top: 0px solid transparent;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 45px solid $light-blue;
+  width: 0;
+
+  &::after { 
+    @include flag-styles(10%, 10%, .3s);
+  }
 }
