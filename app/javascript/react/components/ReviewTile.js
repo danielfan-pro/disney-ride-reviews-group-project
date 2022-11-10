@@ -5,7 +5,7 @@ const ReviewTile = (props) => {
   let reviewImage
   
   if (props.image !== null) {
-    reviewImage = <img src= {props.image} className="review-photo"/>
+    reviewImage = <a data-open="modal-image" ><img src= {props.image} className="review-photo" /></a>
   }
   
   return (
@@ -19,7 +19,15 @@ const ReviewTile = (props) => {
 
         <p>Title: {props.title}</p>
         <p>Review: {props.body}</p> 
+
         {reviewImage}
+        
+        <div className="full reveal" id="modal-image" data-reveal>
+          <img src={props.image} />
+          <button className="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       </div>
     </div>
   )

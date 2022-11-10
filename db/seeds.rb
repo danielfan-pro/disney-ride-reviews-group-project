@@ -54,7 +54,7 @@ user_6 = User.create(
 ride_1 = Ride.find_or_create_by(
   name: "Journey of The Little Mermaid", 
   location: "Fantasyland", 
-  image_url: "https://disney-project-production.s3.amazonaws.com/Screen-Shot-2021-06-06-at-2.26.50-PM-800x400.png",
+  image_url: "https://disney-project-production.s3.amazonaws.com/lil+mermaid.jpg",
   description: "Revisit the classic “tail” of how one lucky little mermaid found true love… and legs." ,
   user: user_admin
   )

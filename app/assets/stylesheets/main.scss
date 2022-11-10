@@ -1,6 +1,10 @@
 @import "colors";
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Arima+Madurai&');
 
+body {
+  background: #faf0f1;
+}
+
 .logo {
   width: 5rem;
   border-radius: 0.313rem;
@@ -27,7 +31,7 @@ nav.top-bar {
 }
 
 .review-button {
-  margin-top: 7.5rem;
+  margin-top: 1rem;
 }
 
 .top-bar input {
@@ -185,6 +189,7 @@ ul.menu {
   text-align: center;
   padding: 3rem;
   border: 0.063rem grey dashed;
+  background: #ffffff;
 };
 
 .submit-button {

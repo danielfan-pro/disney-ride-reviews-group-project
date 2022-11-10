@@ -4,7 +4,7 @@ import ReviewForm from "./ReviewForm";
 
 const RideShow = (props) => {
 
-  const reviewTiles = props.reviews.map((review) => {
+  const reviewTilesOldFirst = props.reviews.map((review) => {
     return (
       <ReviewTile
         key={review.id}
@@ -17,6 +17,8 @@ const RideShow = (props) => {
       />
     );
   });
+
+  const reviewTiles = reviewTilesOldFirst.reverse()
 
   return (
     <div className="ride-show">
