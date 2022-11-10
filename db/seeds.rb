@@ -116,6 +116,39 @@ description: "Deep inside an age-old mountain, clamber into a rustic mine train 
 user: user_admin
 )
 
+ride_9 = Ride.find_or_create_by(
+  name: "Buzz Lightyear's Space Ranger Spin" , 
+  location: "Tomorrowland", 
+  image_url: "https://disney-project-production.s3.amazonaws.com/buzz-lightyear-space-ranger-spin-gallery00.jpeg",
+  description: "Buzz Lightyear’s arch-nemesis from Toy Story 2 is stealing batteries from helpless toys to power a new weapon of destruction. Become a Junior Space Ranger and help stop Zurg!",
+  user: user_admin
+  )
+
+ride_10 = Ride.find_or_create_by(
+  name: "The Barnstormer" , 
+  location: "Fantasyland", 
+  image_url: "https://disney-project-production.s3.amazonaws.com/barnstormer-starring-great-goofini-gallery09.jpeg",
+  description: "Make your way to an open-air barn where Goofy—known as The Great Goofini—performs his world-famous aerial stunt show. ",
+  user: user_admin
+  )
+
+ride_11 = Ride.find_or_create_by(
+  name: "Big Thunder Mountain Railroad" , 
+  location: "Frontierland", 
+  image_url: "https://disney-project-production.s3.amazonaws.com/big-thunder-mountain-railroad-gallery02.jpg",
+  description: "Legend has it that soon after gold was first discovered here in the 1850s, eerie things began to happen. Trains would take off and race through tunnels—by themselves.",
+  user: user_admin
+  )
+
+ride_12 = Ride.find_or_create_by(
+  name: "Haunted Mansion" , 
+  location: "Liberty Square", 
+  image_url: "https://disney-project-production.s3.amazonaws.com/haunted-mansion-gallery12-16x9.jpg",
+  description: "The disembodied voice of the Ghost Host is your private guide through the cadaverous realm of an eerie haunted estate, home to ghosts, ghouls and supernatural surprises.",
+  user: user_admin
+  )
+  
+
 
 
 # # ### Review ###
@@ -143,127 +176,3 @@ review_3 = Review.find_or_create_by(
   ride: ride_2 
 )
 
-# 7 Dwarfs
-# Would ride again
-#   Lovely ride! The rollercoeaster is a lot of fun, and the lines are not too bad thanks to the tree shade, and the cool props.
-#   5
-
-# Meh
-# This was a neat ride through the story of Snow White and the Seven Dwarfs. Not the best coaster I've ever been on but still very good. The swaying action was a cool feature.
-# 3
-
-# Just like the movie
-# Rope Dropped and only waited 30 minutes. Fun, cute ride. It always feels over too quickly though.
-# 4
-
-
-# pirates of the carribean
-#  This is the tale of captain...
-#   One of the best boat rides I have ever been on with many animatronics and iconic scenes. It is missing a few scenes that Disneyland has but the overall ride is the same.
-#   5
-
-#   Loved the ride
-#   An iconic boat ride through the life and times of being a pirate. Catchy theme song. Cannons and pirates and skeletons and captain jack and captain Barbosa
-#   5
-
-#   Terrible experience
-#   Got stuck on the ride for 2 HOURS!!!
-#   1
-
-
-# peter pans flight
-# A must for all Peter Pan fans
-#   This was a must for one of my adult children. She's a Peter Pan fan. My 4-year-old grandchildren enjoyed it as well. Would recommend.
-#   4
-
-#   A whimsical flight through Neverland!
-#   We visited Peter Pan's Flight while in Disneyworld. We had a long wait and a handicapped rider so they gave us a "fast pass" to come back after a designated time to enjoy our ride. It was worth the wait as this ride was a lot of fun. We soared over scenes from Peter Pan from Captain Hook to the Pirates making Wendy walk the plank. It was an enjoyable ride for all ages but is best for the young ones!
-#   5
-
-#   Not worth waiting for
-#   This ride in not worth waiting for, it's slow and uneventful. This is best suited to those with young children.
-# We had fast passes which meant only a 10 min wait.
-# The main queue was over 2 hrs.
-# 3
-
-# Jungle Cruise
-# Title: AWFUL! TERRIFIED MY CHILDREN!
-
-# Body: THIS RIDE WAS HORRIBLE! My children (3 & 5) were terrified of this ride .. The waterfall too big and loud! The gorillas were SO REAL and ROARED at us. We spent 5 hours waiting in line for this ride and they wouldn’t even give me a free ride because we hated it! Will never visit this again unless I get a free season pass for me and my 10 family members.
-
-# Rating: 1
-
-# Photo: https://teisinc.com/wp-content/uploads/2014/10/bigstock-Baby-Crying-5482985.jpg
-
-
-
-# Ariel
-# Title: Wonderful! 
-
-# Body: This ride took me back to my childhood days where I would watch The Little Mermaid on repeat. We loved this ride so much we will go back again tomorrow!
-
-# Rating: 10
-
-# Photo: https://i.pinimg.com/originals/cf/10/1e/cf101e99d5b8f22042926844016afc88.jpg
-
-
-# Pirates
-# Title: NOT FUN
-
-# Body: they wouldn’t even let me take my rum on this ride! what is even the point!
-
-# Rating: 8
-
-
-
-# Aladdin
-# Title: Put my kids to sleep
-
-# Body: While this ride was cute and soothing, it put my kids to sleep. They woke up when we left the ride and then I had to deal with 3 cranky, screaming children for the rest of the day. Save this ride for the end of your day!
-
-# Rating: 6
-
-# Photo: https://i0.wp.com/babesindisneylandblog.com/wp-content/uploads/2016/07/IMG_2604.jpg?resize=623%2C467
-
-
-# Aladdin
-# Title: Made my kids throw up!
-
-# Body: This was too much motion for my children. We had just eaten a big lunch, my kids got sick on the ride and it had to end early, AND we had to go back to the hotel to clean them up. Massive waste of time
-
-# Rating: 2
-
-# Photo: https://momunleashed.com/wp-content/uploads/2015/04/Sick-at-Disney-3.jpg
-
-
-# Splash Mountain
-# Title: Best. Ride. Ever.
-
-# Body: it was so hot the day we went to disney, this was amazing to cool us down, we wanted to ride it 4 more times.
-
-# Rating: 10
-
-
-# its a small world
-# Title: Super cute ride
-
-# Body: Great ride
-
-# Rating: 9
-
-# Seven Dwarfs
-# Title: Didn’t go on this ride
-
-# Body: I didn’t go on this ride.
-
-# Rating: 0
-
-# peter pan
-# Title: Good family fun
-
-# Body: My children and my husband loved this ride. I was indifferent but because they enjoyed it, I was happy
-
-# Rating: 7
-
-# photo: https://i.ytimg.com/vi/R50He-bmA_U/maxresdefault.jpg
-  

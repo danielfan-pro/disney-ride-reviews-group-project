@@ -163,7 +163,7 @@ ul.menu {
 
 .devise-form {
   margin: auto;
-  width: 50%;
+  width: 17%;
 }
 
 .form-header {
@@ -589,4 +589,16 @@ clip-path: polygon(16% 0, 85% 0, 85% 38%, 100% 38%, 86% 100%, 15% 100%, 0 37%, 1
   &::after { 
     @include flag-styles(10%, 10%, .3s);
   }
+}
+
+.google-customBtn {
+  width: 234px;
+  height: 40px;
+}
+
+.signin-button {
+  width: 234px;
+  height: 40px;
+  margin: 5px auto ;
+  display: block;
 }

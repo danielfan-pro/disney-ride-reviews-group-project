@@ -71,8 +71,9 @@ const ReviewForm = (props) => {
         photo: ""
       }
       )
+      setDisplayForm("hide")
+      setFiles([])
     }
-    setDisplayForm("hide")
   }
   
   return (

@@ -21,6 +21,13 @@
     <div class="actions">
       <%= f.submit "Sign in" %>
     </div>
+
+    <br>
+        <div id="appleid-signin" class="signin-button " data-color="black" data-border="true" data-type="sign in"></div>
+        <div class="g-signin2 google-customBtn signin-button" data-width="234" data-height="40" data-longtitle="true" data-onsuccess="onSignIn"></div>
+        <div class="fb-login-button signin-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+     
   <% end %>
+  <br>
   <%= render "devise/shared/links" %>
 </div>
