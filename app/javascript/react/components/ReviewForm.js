@@ -12,6 +12,7 @@ const ReviewForm = (props) => {
 
   const [errors, setErrors] = useState({}) 
   const [displayForm, setDisplayForm] = useState("hide")
+  const [files, setFiles] = useState([])
 
   const displayReviewForm = () => {
     if (displayForm === 'hide') {
@@ -27,7 +28,15 @@ const ReviewForm = (props) => {
       ...newReview,
       photo: acceptedFiles[0]
     })
+
+    setFiles([
+      ...files,
+      <li key={acceptedFiles[0].path}>
+      {acceptedFiles[0].path} - {acceptedFiles[0].size} bytes
+    </li>
+    ])
   }
+
   
   const handleFormChange =(event) => {
     setNewReview({
@@ -93,8 +102,14 @@ const ReviewForm = (props) => {
               </div>
             </section>
           )}
-        </Dropzone>
+          </Dropzone>
+          
+        <aside>
+          <ul>{files}</ul>
+        </aside>
       </div>      
+        
+
       
       <div className="submit-button">
         <button className="button write-review">Submit Review</button>
