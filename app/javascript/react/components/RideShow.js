@@ -22,9 +22,10 @@ const RideShow = (props) => {
     <div className="ride-show">
       <div className="grid-x grid-margin-x">
         <div className="small-12 medium-8 large-8">
-          <h3>{props.name}</h3>
+          <h1 className="park-and-ride-title">{props.name}</h1>
           <h4>{props.location}</h4>
-          <img src={props.image_url} alt={props.name} className="image-tile" />
+          <img src={props.image_url} alt={props.name} className="image-title-show ride-review-image"/>
+          <h6 className="ride-tile-description">{props.description}</h6>
         </div>
 
         <div className="small-12 medium-4 large-4 form-div">
@@ -34,9 +35,7 @@ const RideShow = (props) => {
           />
         </div>
       </div>
-      
         {reviewTiles}
-
     </div>
   );
 };

@@ -11,8 +11,8 @@
 
   <nav class="top-bar">     
     <a href="/rides" class="logo"><%= image_tag("disney-final.png", alt: "Logo") %></a> 
-    <div>
-
+ 
+      <div>
         <% default_profile = '/Default_profile.png' %>
 
         <%- if current_user && current_user[:profile_photo].nil? == false -%>           

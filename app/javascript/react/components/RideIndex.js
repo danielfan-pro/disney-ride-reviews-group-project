@@ -38,7 +38,9 @@ const RideIndex = (props) => {
   return (
     <div className='ride-index'>
       <div className="grid-x">
-        <h3 className= "small-12 medium-6 large-8 park-ride">Magic Kingdom Rides</h3>
+        <div className= "small-12 medium-6 large-8 park-section">
+          <h1 className="park-and-ride-title">Magic Kingdom Rides</h1>
+        </div>
         <SearchBar 
           rides={rides}
           setRides={setRides}

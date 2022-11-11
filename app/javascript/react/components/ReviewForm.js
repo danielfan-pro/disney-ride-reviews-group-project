@@ -12,6 +12,7 @@ const ReviewForm = (props) => {
 
   const [errors, setErrors] = useState({}) 
   const [displayForm, setDisplayForm] = useState("hide")
+  const [files, setFiles] = useState([])
 
   const displayReviewForm = () => {
     if (displayForm === 'hide') {
@@ -27,8 +28,15 @@ const ReviewForm = (props) => {
       ...newReview,
       photo: acceptedFiles[0]
     })
+
+    setFiles([
+      ...files,
+      <li key={acceptedFiles[0].path}>
+      {acceptedFiles[0].path} - {acceptedFiles[0].size} bytes
+    </li>
+    ])
   }
-  
+
   const handleFormChange =(event) => {
     setNewReview({
       ...newReview,
@@ -62,15 +70,17 @@ const ReviewForm = (props) => {
         photo: ""
       }
       )
+      setDisplayForm("hide")
+      setFiles([])
     }
   }
   
   return (
-    <div className={`review-form-div ${props.reviewButton}`}>
+    <div className={`review-form-div review-button ${props.reviewButton}`}>
       <button className="button write-review" type="button" onClick={displayReviewForm}>Write Review</button>
-
       <form onSubmit={handleSubmitAddNewReview} className={`new-review ${displayForm}`}>
         <ErrorList errors={errors} />
+        
         <label htmlFor="title">Review Headline
           <input id="title" type="text" name="title" value={newReview.title} onChange={handleFormChange}/>
         </label>
@@ -89,17 +99,23 @@ const ReviewForm = (props) => {
             <section>
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
-                <p>Drag 'n' drop some files here, or click to select files</p>
+                <p>Drag image here, or click to select files</p>
               </div>
             </section>
           )}
-        </Dropzone>
+          </Dropzone>
+          
+        <aside>
+          <ul>{files}</ul>
+        </aside>
       </div>      
         
-        <input type="submit" />
+      <div className="submit-button">
+        <button className="button write-review">Submit Review</button>
+      </div>
+      
       </form>
     </div>
 )}
 
 export default ReviewForm
-
