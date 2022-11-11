@@ -175,4 +175,3 @@ review_3 = Review.find_or_create_by(
   user: user_2,
   ride: ride_2 
 )
-

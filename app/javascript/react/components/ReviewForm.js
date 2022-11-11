@@ -37,7 +37,6 @@ const ReviewForm = (props) => {
     ])
   }
 
-  
   const handleFormChange =(event) => {
     setNewReview({
       ...newReview,
@@ -111,8 +110,6 @@ const ReviewForm = (props) => {
         </aside>
       </div>      
         
-
-      
       <div className="submit-button">
         <button className="button write-review">Submit Review</button>
       </div>
