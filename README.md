@@ -2,6 +2,7 @@
 Name and brief description of the project
 
 Disney Rides Reviews
+
 It's a website that display all rides at Disney's Magic Kingdom. Users can sign up and write reviews, rate and upload images for each ride.
 
 A list of authors
