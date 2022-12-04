@@ -83,3 +83,4 @@ production:
   database: disney_ride_reviews_group_project_production
   username: disney_ride_reviews_group_project
   password: <%= ENV['DISNEY_RIDE_REVIEWS_GROUP_PROJECT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
