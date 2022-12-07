@@ -7,7 +7,7 @@ It's a website that display all rides at Disney's Magic Kingdom. Users can sign 
 
 A list of authors
 
-Ziming Chen, Daniel Fan, Marc Yerba, Kayla Smith
+Ziming Chen, Daniel Fan, Marc Yebra, Kayla Smith
 
 A list of features included in the site
 
